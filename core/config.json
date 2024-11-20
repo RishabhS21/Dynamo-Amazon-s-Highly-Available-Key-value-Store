@@ -1,0 +1,10 @@
+{
+    "NUMSER": 4,
+    "NUMSEED": 4,
+    "RING_BLEN": 4,
+    "RING_SIZE": 4294967296,
+    "N": 3,
+    "host": "172.24.8.181" ,
+    "SEEDPORT": 9000,
+    "SERVERPORT": 9004
+}
