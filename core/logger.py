@@ -1,13 +1,13 @@
 import sys
 from logging import INFO, DEBUG, WARNING
 
-from logger import logger
+from loguru  import logger
 logger.remove()
 
 _server_fmt = "<green>{time:HH:mm:ss}</green> <blue>{level}</blue> <cyan>{thread.name} {extra[server_name]}</cyan> {message}"
 logger.add(
-  # "logs/server.log",
-  sys.stdout,
+  "logs/server.log",
+  # sys.stdout,
   filter=lambda record: record["extra"].get("name") == "s",
   format=_server_fmt,
   level=INFO)
