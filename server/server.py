@@ -16,74 +16,68 @@ from core.logger import server_logger
 from core.message import JsonMessage
 from core.socket_helpers import STATUS_CODE, recv_message
 
-import hashlib
 import json
-from ring.ring import Ring 
+from ring.ring import Ring
 import random
 
-@dataclass
-class ServerInfo:
-  name: str
-  host: str
-  port: int
+import psycopg2
+from psycopg2 import sql
 
-  def __hash__(self) -> int:
-    return hash(f"{self.name} {self.host}:{self.port}")
+from core.server import ServerInfo
 
-  def __str__(self) -> str:
-    return f"Name={self.name},Address={self.host}:{self.port},"
+# Database connection parameters for the default database
+DB_HOST = "localhost"
+DB_PORT = "5432"
+DB_NAME = "postgres"      # Connect to the 'postgres' database
+DB_USER = "postgres"      # Your database user
+DB_PASSWORD = "postgres"  # Your database password
+
+
 
 class Server(Process):
-    def __init__(self, info: ServerInfo, connection_stub: ConnectionStub, config) -> None:
+    def __init__(
+        self, info: ServerInfo, connection_stub: ConnectionStub, config
+    ) -> None:
         super(Server, self).__init__()
         self._info: ServerInfo = info
-        self._connection_stub: ConnectionStub = connection_stub #seeds
+        self._connection_stub: ConnectionStub = connection_stub  # seeds
         self.config = config
         self.serverid: str = self._info.name[7:]
-        self.ring: Ring = Ring(self._info, list(self._connection_stub._connections.values()), self.config)
+        self.ring: Ring = Ring(
+            self._info, list(self._connection_stub._connections.values()), self.config
+        )
         self.lock = threading.Lock()
+        self.db: str = self._info.name
+        _logger = server_logger.bind(server_name=self._info.name)
 
+        """Setup the database for the server."""
+        while True:
+            try:
+                # Connect to the default 'postgres' database
+                self.db_connection = psycopg2.connect(
+                    host=DB_HOST,
+                    port=DB_PORT,
+                    database=DB_NAME,
+                    user=DB_USER,
+                    password=DB_PASSWORD
+                )
+                self.db_connection.autocommit = True  # Ensure changes are committed without explicit commit()
+
+                # Create a cursor object
+                self.db_cursor = self.db_connection.cursor()
+                create_database_query = f"""
+                    CREATE DATABASE {self.db};
+                """
+                self.db_cursor.execute(create_database_query)
+                _logger.info(f"Created database {self.db}")
+                return
+            except Exception as e:
+                _logger.info(f"Error connecting to database: {e}")
+                sleep(1)
     def load_config(filename="config.json"):
-        with open(filename, 'r') as file:
+        with open(filename, "r") as file:
             config = json.load(file)
         return config
-    
-    def generate_serverid(self):
-        """Generate a random position in the ring"""
-        return random.randint(0, self.config["RING_SIZE"] - 1)
-
-    def SH1hash(input_string):
-        """Generate a 40-bit hash value using SHA-1"""
-        # SHA-1 generates a 20-byte hash
-        sha1_hash = hashlib.sha1(input_string.encode()).digest()
-        
-        # Combine the first 5 bytes into an integer (40 bits)
-        hash_value = 0
-        for i in range(5):
-            hash_value = (hash_value << 8) | sha1_hash[i]
-        
-        return hash_value
-
-    def inc_server(self, serverid):
-        """Insert a new server into the ring"""
-        try:
-            self.ring.servers.append(serverid)
-            self.ring.numserver+=1
-            return True
-        except Exception as e:
-            print(f"Exception occurred: {e}")
-            return False
-
-
-    def find_coordinator(self, key):
-        """Find the coordinator based on the key"""
-        hashkey = self.SH1hash(key)
-        # Find the first position greater than or equal to the hashkey
-        for pos in self.ring.servers:
-            if pos >= hashkey:
-                return pos
-        # If no such position is found, return the first position in the ring
-        return next(iter(self.ring.servers))
 
     def handle_client(self, client_sock: socket.socket, addr: socket.AddressInfo):
         _logger = server_logger.bind(server_name=self._info.name)
@@ -94,7 +88,9 @@ class Server(Process):
 
                 if request is None:
                     _logger.critical(f"{STATUS_CODE[err_code]}")
-                    sr = JsonMessage(msg={"error_msg": STATUS_CODE[err_code], "error_code": err_code})
+                    sr = JsonMessage(
+                        msg={"error_msg": STATUS_CODE[err_code], "error_code": err_code}
+                    )
                 else:
                     _logger.debug(f"Received message from {addr}: {request}")
                     sr = self._process_req(request)
@@ -109,7 +105,9 @@ class Server(Process):
 
     def setup_seeds(self):
         sleep(2)
-        msg = JsonMessage({"type":"PING", "name":self._info.name, "port":self._info.port})
+        msg = JsonMessage(
+            {"type": "PING", "name": self._info.name, "port": self._info.port}
+        )
         with self.lock:
             self._connection_stub.broadcast(msg)
 
@@ -118,30 +116,58 @@ class Server(Process):
         sleep(2)
         while True:
             try:
-                sleep(random.choice([1,2,3]))
+                sleep(random.choice([1, 2, 3]))
                 with self.lock:
                     msg = JsonMessage(self.ring.encode())
                     to = random.choice(list(self._connection_stub._connections.keys()))
                 sock = self._connection_stub.get_connection(to)
                 reply = sock.send(msg)
-                    # _logger.info(f"Membership update sent to {to}")
-                    # _logger.info(f"Membership update response from {to}: {reply}")
+                # _logger.info(f"Membership update sent to {to}")
+                # _logger.info(f"Membership update response from {to}: {reply}")
 
             except Exception as e:
                 _logger.info(f"Error in membership broadcast: {e}")
+
+    def udp_server(self):
+        # Create a UDP socket for clients
+        _logger = server_logger.bind(server_name=self._info.name)
+        client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_sock:
+            # Bind the socket to the address and port
+            udp_sock.bind((self._info.host, self._info.port))
+            _logger.info(f"UDP server listening on {self._info.host}:{self._info.port}")
+
+            while True:
+                # Receive data from the client
+                request, addr = udp_sock.recvfrom(1024)  # Buffer size is 1024 bytes
+                request = json.loads(request.decode("utf-8"))
+                request = JsonMessage(request)
+                _logger.debug(f"Received message from {addr}: {request}")
+                resp = self._process_req(request)
+                resp = resp._msg_d
+                if resp is not None:
+                    _logger.debug(f"Sending message to {addr}: {resp}")
+                    serialized_resp = json.dumps(resp).encode("utf-8")
+                    try:
+                        # Send the serialized data
+                        client_socket.sendto(serialized_resp, addr)
+                    except:
+                        _logger.debug(f"Error in sending response to request {request}")
 
     def run(self) -> None:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         sock.bind((self._info.host, self._info.port))
         sock.listen()
-
-        sleep(2)    # Let all servers start listening
+        sleep(2)  # Let all servers start listening
         self._connection_stub.initalize_connections()
         seeds_thread = threading.Thread(target=self.setup_seeds, name="seed_ping")
         seeds_thread.start()
         membership_thread = threading.Thread(target=self.membership, name="membership")
         membership_thread.start()
+        udpserver_thread = threading.Thread(target=self.udp_server, name="udp_server")
+        udpserver_thread.start()
         _logger = server_logger.bind(server_name=self._info.name)
         _logger.info(f"Listening on {self._info.host}:{self._info.port}")
 
@@ -149,67 +175,134 @@ class Server(Process):
         try:
             while True:
                 client_sock, addr = sock.accept()
-                client_handler = threading.Thread(target=self.handle_client,
-                                                args=(client_sock, addr), name=f"listen#{addr[1]}")
+                client_handler = threading.Thread(
+                    target=self.handle_client,
+                    args=(client_sock, addr),
+                    name=f"listen#{addr[1]}",
+                )
                 client_handler.daemon = True
                 client_handler.start()
                 client_handlers.append(client_handler)
         finally:
             seeds_thread.join()
             membership_thread.join()
+            udpserver_thread.join()
             sock.close()
             for client_handler in client_handlers:
                 client_handler.join()
 
 
+    def forwardPref(self, msg: JsonMessage, pref: list[ServerInfo]):
+        """
+        Forward a message to the servers in the preference list using threads, with a timeout for each send operation.
+
+        Args:
+            msg (JsonMessage): The message to be forwarded.
+            pref (list[ServerInfo]): A list of preferred servers to forward the message to.
+            timeout (float): The timeout in seconds for each thread.
+
+        Returns:
+            dict: A dictionary with server names as keys and their responses or errors as values.
+        """
+        _logger = server_logger.bind(server_name=self._info.name)
+        results = {}
+        threads = []
+        response_lock = threading.Lock()
+
+        def send_message(server: ServerInfo):
+            nonlocal results
+            try:
+                sock = self._connection_stub.get_connection(server.name)
+                _logger.debug(f"Sending message {msg} to server {server}")
+                response = sock.send(msg)
+                if response is not None:
+                    _logger.debug(f"Received response from {server}: {response}")
+                    with response_lock:
+                        results[server.name] = {"status": "success", "response": response}
+            except Exception as e:
+                _logger.error(f"Failed to send message to {server}: {e}")
+
+        # Create threads for each server in the preference list
+        for server in pref:
+            thread = threading.Thread(target=send_message, args=(server,))
+            thread.start()
+            threads.append(thread)
+
+        # Wait for all threads to complete
+        for thread in threads:
+            thread.join()
+
+        return results
 
     def _process_req(self, msg: JsonMessage) -> Optional[JsonMessage]:
         _logger = server_logger.bind(server_name=self._info.name)
-        if (msg.get("type")=="PING"):
-            _logger.info(f'Ping from on [{msg.get("name")}:{msg.get("port")}]')
+
+        if msg.get("type") == "PING":
+            # _logger.info(f'Ping from on [{msg.get("name")}:{msg.get("port")}]')
             name = msg.get("name")
             port = int(msg.get("port"))
             meminfo = ServerInfo(name, self.config["host"], port)
             with self.lock:
-                if self.ring.equal(self._info, meminfo): 
-                    return JsonMessage({"status":1})
-                for info in self.ring.servers:
-                    if self.ring.equal(meminfo, info):
-                        return JsonMessage({"status":1})
-                self.ring.servers.append(meminfo)
+                pos = self.ring.servers.bisect_left(meminfo)
+                # _logger.info(f"{meminfo} : position: {pos} : {self.ring.servers}")
+                if pos<self.ring.numserver and self.ring.equal(self.ring.servers[pos], meminfo):
+                    return JsonMessage({"status": 1})
+                self.ring.servers.add(meminfo)
+                self.ring.numserver += 1
                 try:
                     self._connection_stub.addServer(meminfo)
                 except Exception as e:
                     _logger.info(f"Error in addServer: {e}")
             # _logger.info(self.ring.servers)
-            _logger.info(len(self.ring.servers))
-            return JsonMessage({"status":1})
+            # _logger.info(self.ring.numserver)
+            return JsonMessage({"status": 1})
 
-        elif (msg.get("type")=="MEMBERSHIP"):
-            _logger.info(f'Memebership msg from {msg.get("From")} to {self._info.name}: {msg.get("Names")}')
+
+        elif msg.get("type") == "MEMBERSHIP":
+            # _logger.info(
+            #     f'Memebership msg from {msg.get("from")} to {self._info.name}: {msg.get("Names")}'
+            # )
             servers = self.ring.decode(msg)
-            _logger.info(servers)
             with self.lock:
                 for meminfo in servers:
-                    exist = False  
-                    if self.ring.equal(self._info, meminfo): 
-                        exist = True
+                    exist = False
                     if not exist:
-                        for info in self.ring.servers:
-                            if self.ring.equal(meminfo, info):
-                                exist = True
-                                break
+                        pos = self.ring.servers.bisect_left(meminfo)
+                        if pos<self.ring.numserver and self.ring.equal(self.ring.servers[pos], meminfo):
+                            exist = True
                     if not exist:
-                        self.ring.servers.append(meminfo)
+                        self.ring.servers.add(meminfo)
+                        self.ring.numserver += 1
                         try:
                             self._connection_stub.addServer(meminfo)
                         except Exception as e:
                             _logger.info(f"Error in addServer: {e}")
             # _logger.info(self.ring.servers)
-            _logger.info(len(self.ring.servers))
+            # _logger.info(self.ring.numserver)
 
-            return JsonMessage({"status":1})
-            
+            return JsonMessage({"status": 1})
+        
+        elif msg.get("type") == "PUT":
+            _logger.info(f"Recieved PUT request {msg}")
+            key = msg.get("key")
+            val = msg.get("val")
+            coordinator = self.ring.servers[self.ring.find_coordinator(key)]
+            if not self.ring.equal(self._info,coordinator):
+                _logger.info(
+                    f"Redirecting PUT request to {coordinator}"
+                )
+                sock = self._connection_stub.get_connection(coordinator.name)
+                return sock.send(msg)
+            pref = self.ring.find_preference(key)
+            _logger.info(f"Correct Coordinator for request: {msg} : Preference list {pref}")
+            msg["type"]="RPUT"
+            responses = self.forwardPref(msg, pref)
+            _logger.info(f"Responses from preference servers: {responses}")
+            return JsonMessage({"status": "success"})
+
+        elif msg.get("type") == "RPUT":
+            _logger.info(f"Recieved RPUT request {msg}")
+            return JsonMessage({"status": "success"})
 
     def __str__(self) -> str:
         return str(self._info)

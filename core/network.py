@@ -44,15 +44,14 @@ class TcpClient:
           self._logger.exception(e)
       self._client_sockets = None
 
-  def send(self, message: JsonMessage) -> JsonMessage:
+  def send(self, message: JsonMessage, timeout: int = 5) -> JsonMessage:
     """
     Send message to the server and wait for response, then return the response.
     """
     response = None
     client_socket = self.get_sock()
-
+    client_socket.settimeout(timeout)
     try:
-
       client_socket.sendall(message.serialize())
       self._logger.debug(f"Message sent to server at {self._info.host}:{self._info.port} -> {message}")
 
@@ -61,7 +60,7 @@ class TcpClient:
 
         if response is None:
           self._logger.critical(f"{STATUS_CODE[err_code]}")
-          return JsonMessage({"status": STATUS_CODE[err_code]})
+          return None
     except Exception as e:
       self._logger.exception(e)
     finally:
