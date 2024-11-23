@@ -39,7 +39,7 @@ class Seed(Process):
     self._info = info
     self.config = config
     self._connection_stub = connection_stub # other seeds
-    self.ring: Ring = Ring(self._info, list(self._connection_stub._connections.values()))
+    self.ring: Ring = Ring(self._info, list(self._connection_stub._connections.values()), self.config)
     self.lock = threading.Lock() 
 
   def handle_client(self, client_sock: socket.socket, addr: socket.AddressInfo):
@@ -66,22 +66,24 @@ class Seed(Process):
 
   def setup_seeds(self):
     sleep(2)
-    msg = JsonMessage({"type":"PING", "name":self._info.name, "port":self._info.port})
-    self._connection_stub.broadcast(msg)
+    with self.lock:
+      msg = JsonMessage({"type":"PING", "name":self._info.name, "port":self._info.port})
+      self._connection_stub.broadcast(msg)
 
   def membership(self):
+    sleep(2)
     _logger = server_logger.bind(server_name=self._info.name)
     while True:
         try:
-            sleep(2)
+            sleep(random.choice([1,2,3]))
             with self.lock:
               if not self._connection_stub._connections:
                   _logger.warning("No active connections to send membership updates.")
                   continue
               msg = JsonMessage(self.ring.encode())
               to = random.choice(list(self._connection_stub._connections.keys()))
-              sock = self._connection_stub.get_connection(to)
-              reply = sock.send(msg)
+            sock = self._connection_stub.get_connection(to)
+            reply = sock.send(msg)
               # _logger.info(f"Membership update sent to {to}")
               # _logger.info(f"Membership update response from {to}: {reply}")
         except Exception as e:
@@ -96,7 +98,7 @@ class Seed(Process):
 
     sleep(2)    # Let all servers start listening
     self._connection_stub.initalize_connections()
-    seeds_thread = threading.Thread(target=self.setup_seeds, name="testing")
+    seeds_thread = threading.Thread(target=self.setup_seeds, name="seed_ping")
     seeds_thread.start()
     membership_thread = threading.Thread(target=self.membership, name="membership")
     membership_thread.start()
@@ -130,21 +132,46 @@ class Seed(Process):
       port = int(msg.get("port"))
       meminfo = ServerInfo(name, self.config["host"], port)
       with self.lock:
+        if self.ring.equal(self._info, meminfo): 
+          return JsonMessage({"status":1})
         for info in self.ring.servers:
-          if (meminfo.name == info.name and
-              meminfo.host == info.host and
-              meminfo.port == info.port):
-              return JsonMessage({"status":1})
+          if self.ring.equal(meminfo, info):
+            return JsonMessage({"status":1})
         self.ring.servers.append(meminfo)
-        _logger.info(self.ring.servers)
-        self._connection_stub.addServer(info)
+        try:
+          self._connection_stub.addServer(meminfo)
+        except Exception as e:
+          _logger.info(f"Error in addServer: {e}")
+
+      # _logger.info(self.ring.servers)
+      _logger.info(len(self.ring.servers))
+
       return JsonMessage({"status":1})
 
     elif (msg.get("type")=="MEMBERSHIP"):
-        _logger.info(f'Memebership {msg.get("Names")}')
-        _logger.info(self.ring.servers)
+      _logger.info(f'Memebership msg from {msg.get("From")} to {self._info.name}: {msg.get("Names")}')
+      servers = self.ring.decode(msg)
+      _logger.info(servers)
+      with self.lock:
+        for meminfo in servers:
+          exist = False  
+          if self.ring.equal(self._info, meminfo): 
+            exist = True
+          if not exist:
+            for info in self.ring.servers:
+              if self.ring.equal(meminfo, info):
+                  exist = True
+                  break
+        if not exist:
+          self.ring.servers.append(meminfo)
+          try:
+            self._connection_stub.addServer(meminfo)
+          except Exception as e:
+              _logger.info(f"Error in addServer: {e}")
+      # _logger.info(self.ring.servers)
+      _logger.info(len(self.ring.servers))
 
-        return JsonMessage({"status":1})
+      return JsonMessage({"status":1})
 
   def __str__(self) -> str:
     return str(self._info)
