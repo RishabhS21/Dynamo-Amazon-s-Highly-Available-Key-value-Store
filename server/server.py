@@ -65,11 +65,6 @@ class Server(Process):
 
                 # Create a cursor object
                 self.db_cursor = self.db_connection.cursor()
-                create_database_query = f"""
-                    CREATE DATABASE {self.db};
-                """
-                self.db_cursor.execute(create_database_query)
-                _logger.info(f"Created database {self.db}")
                 create_table_query = f"""
                     CREATE TABLE {self._info.name} (
                         key VARCHAR(255) PRIMARY KEY,
@@ -175,6 +170,7 @@ class Server(Process):
         membership_thread.start()
         udpserver_thread = threading.Thread(target=self.udp_server, name="udp_server")
         udpserver_thread.start()
+        
         _logger = server_logger.bind(server_name=self._info.name)
         _logger.info(f"Listening on {self._info.host}:{self._info.port}")
 

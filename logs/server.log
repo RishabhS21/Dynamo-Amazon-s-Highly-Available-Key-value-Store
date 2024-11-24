@@ -1,426 +1,317 @@
-13:30:05 INFO MainThread Server_2059284446 Created database Server_2059284446
-13:30:05 INFO MainThread Server_2059284446 Created table Server_2059284446
-13:30:05 INFO MainThread Server_2884727557 Created database Server_2884727557
-13:30:05 INFO MainThread Server_2884727557 Created table Server_2884727557
-13:30:05 INFO MainThread Server_1816615081 Created database Server_1816615081
-13:30:05 INFO MainThread Server_1816615081 Created table Server_1816615081
-13:30:06 INFO MainThread Server_2040695960 Created database Server_2040695960
-13:30:06 INFO MainThread Server_2040695960 Created table Server_2040695960
-13:30:07 INFO MainThread Seed_0 Listening on 172.24.8.181:9000
-13:30:07 INFO MainThread Seed_1 Listening on 172.24.8.181:9001
-13:30:07 INFO MainThread Seed_2 Listening on 172.24.8.181:9002
-13:30:07 INFO MainThread Seed_3 Listening on 172.24.8.181:9003
-13:30:07 INFO MainThread Server_2059284446 Listening on 172.24.8.181:9004
-13:30:07 INFO udp_server Server_2059284446 UDP server listening on 172.24.8.181:9004
-13:30:07 INFO MainThread Server_2884727557 Listening on 172.24.8.181:9005
-13:30:07 INFO udp_server Server_2884727557 UDP server listening on 172.24.8.181:9005
-13:30:08 INFO MainThread Server_1816615081 Listening on 172.24.8.181:9006
-13:30:08 INFO udp_server Server_1816615081 UDP server listening on 172.24.8.181:9006
-13:30:08 INFO MainThread Server_2040695960 Listening on 172.24.8.181:9007
-13:30:08 INFO udp_server Server_2040695960 UDP server listening on 172.24.8.181:9007
-13:30:08 INFO listen#42250 Server_2040695960 Memebership msg from Seed_1 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:08 INFO listen#42250 Server_2040695960 Transferring keys to new server: Name=Server_1816615081,Address=172.24.8.181:9006,
-13:30:08 INFO listen#42250 Server_2040695960 Transferring keys to new server: Name=Server_2059284446,Address=172.24.8.181:9004,
-13:30:08 INFO listen#42250 Server_2040695960 Transferring keys to new server: Name=Server_2884727557,Address=172.24.8.181:9005,
-13:30:08 INFO listen#45346 Server_2884727557 Memebership msg from Seed_3 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:08 INFO listen#45346 Server_2884727557 Transferring keys to new server: Name=Server_1816615081,Address=172.24.8.181:9006,
-13:30:08 INFO listen#45346 Server_2884727557 Transferring keys to new server: Name=Server_2040695960,Address=172.24.8.181:9007,
-13:30:08 INFO listen#45346 Server_2884727557 Transferring keys to new server: Name=Server_2059284446,Address=172.24.8.181:9004,
-13:30:09 INFO listen#45622 Server_2884727557 Memebership msg from Seed_0 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:10 INFO listen#36942 Server_2059284446 Memebership msg from Seed_3 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:10 INFO listen#36942 Server_2059284446 Transferring keys to new server: Name=Server_1816615081,Address=172.24.8.181:9006,
-13:30:10 INFO listen#36942 Server_2059284446 Transferring keys to new server: Name=Server_2040695960,Address=172.24.8.181:9007,
-13:30:10 INFO listen#36942 Server_2059284446 Transferring keys to new server: Name=Server_2884727557,Address=172.24.8.181:9005,
-13:30:10 INFO listen#37222 Server_2059284446 Memebership msg from Seed_1 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:11 INFO listen#51232 Server_1816615081 Memebership msg from Seed_1 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:11 INFO listen#51232 Server_1816615081 Transferring keys to new server: Name=Server_2040695960,Address=172.24.8.181:9007,
-13:30:11 INFO listen#51232 Server_1816615081 Transferring keys to new server: Name=Server_2059284446,Address=172.24.8.181:9004,
-13:30:11 INFO listen#51232 Server_1816615081 Transferring keys to new server: Name=Server_2884727557,Address=172.24.8.181:9005,
-13:30:13 INFO listen#42530 Server_2040695960 Memebership msg from Server_2059284446 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:13 INFO listen#37222 Server_2059284446 Memebership msg from Seed_1 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:14 INFO listen#49412 Server_2884727557 Memebership msg from Server_1816615081 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:14 INFO listen#40366 Server_1816615081 Memebership msg from Seed_0 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:14 INFO listen#51232 Server_1816615081 Memebership msg from Seed_1 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:15 INFO listen#40606 Server_1816615081 Memebership msg from Server_2040695960 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:16 INFO listen#40606 Server_1816615081 Memebership msg from Server_2040695960 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:16 INFO listen#45622 Server_2884727557 Memebership msg from Seed_0 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:16 INFO listen#49674 Server_2884727557 Memebership msg from Seed_2 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:16 INFO listen#51232 Server_1816615081 Memebership msg from Seed_1 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:17 INFO listen#40872 Server_1816615081 Memebership msg from Server_2884727557 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:17 INFO listen#45346 Server_2884727557 Memebership msg from Seed_3 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:18 INFO listen#49960 Server_2884727557 Memebership msg from Server_2040695960 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:18 INFO listen#41170 Server_1816615081 Memebership msg from Seed_2 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:20 INFO listen#42046 Server_2040695960 Memebership msg from Seed_3 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:20 INFO listen#50254 Server_2884727557 Memebership msg from Seed_1 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:21 INFO listen#42312 Server_2040695960 Memebership msg from Server_1816615081 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:21 INFO listen#49674 Server_2884727557 Memebership msg from Seed_2 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:22 INFO listen#38176 Server_2059284446 Memebership msg from Server_1816615081 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:22 INFO listen#42250 Server_2040695960 Memebership msg from Seed_1 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:23 INFO listen#59032 Server_1816615081 Memebership msg from Seed_3 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:24 INFO udp_server Server_2884727557 Recieved PUT request {"type": "PUT", "key": "a_0", "val": 0}
-13:30:24 INFO udp_server Server_2884727557 coor: 8 len: 8 for key: a_0
-13:30:24 INFO udp_server Server_2884727557 Redirecting PUT request {"type": "PUT", "key": "a_0", "val": 0} to Name=Server_1816615081,Address=172.24.8.181:9006,
-13:30:24 INFO listen#40872 Server_1816615081 Recieved PUT request {"type": "PUT", "key": "a_0", "val": 0}
-13:30:24 INFO listen#40872 Server_1816615081 coor: 8 len: 8 for key: a_0
-13:30:24 INFO listen#40872 Server_1816615081 coor: 8 len: 8 for key: a_0
-13:30:24 INFO listen#40872 Server_1816615081 Correct Coordinator for request: {"type": "PUT", "key": "a_0", "val": 0} : Preference list [ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:24 INFO listen#42312 Server_2040695960 Recieved RPUT request {"type": "RPUT", "key": "a_0", "val": 0, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:24 INFO listen#38176 Server_2059284446 Recieved RPUT request {"type": "RPUT", "key": "a_0", "val": 0, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:25 INFO udp_server Server_2884727557 Recieved PUT request {"type": "PUT", "key": "a_1", "val": 1}
-13:30:25 INFO udp_server Server_2884727557 coor: 8 len: 8 for key: a_1
-13:30:25 INFO udp_server Server_2884727557 Redirecting PUT request {"type": "PUT", "key": "a_1", "val": 1} to Name=Server_1816615081,Address=172.24.8.181:9006,
-13:30:25 INFO listen#40872 Server_1816615081 Recieved PUT request {"type": "PUT", "key": "a_1", "val": 1}
-13:30:25 INFO listen#40872 Server_1816615081 coor: 8 len: 8 for key: a_1
-13:30:25 INFO listen#40872 Server_1816615081 coor: 8 len: 8 for key: a_1
-13:30:25 INFO listen#40872 Server_1816615081 Correct Coordinator for request: {"type": "PUT", "key": "a_1", "val": 1} : Preference list [ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:25 INFO listen#42312 Server_2040695960 Recieved RPUT request {"type": "RPUT", "key": "a_1", "val": 1, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:25 INFO listen#38176 Server_2059284446 Recieved RPUT request {"type": "RPUT", "key": "a_1", "val": 1, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:25 INFO listen#44282 Server_2040695960 Memebership msg from Seed_2 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:25 INFO listen#51256 Server_2059284446 Memebership msg from Seed_0 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:25 INFO listen#36942 Server_2059284446 Memebership msg from Seed_3 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:26 INFO listen#42530 Server_2040695960 Memebership msg from Server_2059284446 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:26 INFO udp_server Server_1816615081 Recieved PUT request {"type": "PUT", "key": "a_2", "val": 2}
-13:30:26 INFO udp_server Server_1816615081 coor: 8 len: 8 for key: a_2
-13:30:26 INFO udp_server Server_1816615081 coor: 8 len: 8 for key: a_2
-13:30:26 INFO udp_server Server_1816615081 Correct Coordinator for request: {"type": "PUT", "key": "a_2", "val": 2} : Preference list [ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:26 INFO listen#42312 Server_2040695960 Recieved RPUT request {"type": "RPUT", "key": "a_2", "val": 2, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:26 INFO listen#38176 Server_2059284446 Recieved RPUT request {"type": "RPUT", "key": "a_2", "val": 2, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:26 INFO listen#36942 Server_2059284446 Memebership msg from Seed_3 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:26 INFO listen#42250 Server_2040695960 Memebership msg from Seed_1 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:27 INFO udp_server Server_2059284446 Recieved PUT request {"type": "PUT", "key": "a_3", "val": 3}
-13:30:27 INFO udp_server Server_2059284446 coor: 8 len: 8 for key: a_3
-13:30:27 INFO udp_server Server_2059284446 Redirecting PUT request {"type": "PUT", "key": "a_3", "val": 3} to Name=Server_1816615081,Address=172.24.8.181:9006,
-13:30:27 INFO listen#59326 Server_1816615081 Recieved PUT request {"type": "PUT", "key": "a_3", "val": 3}
-13:30:27 INFO listen#59326 Server_1816615081 coor: 8 len: 8 for key: a_3
-13:30:27 INFO listen#59326 Server_1816615081 coor: 8 len: 8 for key: a_3
-13:30:27 INFO listen#59326 Server_1816615081 Correct Coordinator for request: {"type": "PUT", "key": "a_3", "val": 3} : Preference list [ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:27 INFO listen#38176 Server_2059284446 Recieved RPUT request {"type": "RPUT", "key": "a_3", "val": 3, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:27 INFO listen#42312 Server_2040695960 Recieved RPUT request {"type": "RPUT", "key": "a_3", "val": 3, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:27 INFO listen#49674 Server_2884727557 Memebership msg from Seed_2 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:28 INFO udp_server Server_2059284446 Recieved PUT request {"type": "PUT", "key": "a_4", "val": 4}
-13:30:28 INFO udp_server Server_2059284446 coor: 8 len: 8 for key: a_4
-13:30:28 INFO udp_server Server_2059284446 Redirecting PUT request {"type": "PUT", "key": "a_4", "val": 4} to Name=Server_1816615081,Address=172.24.8.181:9006,
-13:30:28 INFO listen#59326 Server_1816615081 Recieved PUT request {"type": "PUT", "key": "a_4", "val": 4}
-13:30:28 INFO listen#59326 Server_1816615081 coor: 8 len: 8 for key: a_4
-13:30:28 INFO listen#59326 Server_1816615081 coor: 8 len: 8 for key: a_4
-13:30:28 INFO listen#59326 Server_1816615081 Correct Coordinator for request: {"type": "PUT", "key": "a_4", "val": 4} : Preference list [ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:28 INFO listen#42312 Server_2040695960 Recieved RPUT request {"type": "RPUT", "key": "a_4", "val": 4, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:28 INFO listen#38176 Server_2059284446 Recieved RPUT request {"type": "RPUT", "key": "a_4", "val": 4, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:28 INFO listen#51530 Server_2059284446 Memebership msg from Server_2884727557 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:28 INFO listen#40606 Server_1816615081 Memebership msg from Server_2040695960 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:28 INFO listen#42046 Server_2040695960 Memebership msg from Seed_3 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:29 INFO listen#59326 Server_1816615081 Memebership msg from Server_2059284446 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:29 INFO udp_server Server_2884727557 Recieved PUT request {"type": "PUT", "key": "a_5", "val": 5}
-13:30:29 INFO udp_server Server_2884727557 coor: 8 len: 8 for key: a_5
-13:30:29 INFO udp_server Server_2884727557 Redirecting PUT request {"type": "PUT", "key": "a_5", "val": 5} to Name=Server_1816615081,Address=172.24.8.181:9006,
-13:30:29 INFO listen#40872 Server_1816615081 Recieved PUT request {"type": "PUT", "key": "a_5", "val": 5}
-13:30:29 INFO listen#40872 Server_1816615081 coor: 8 len: 8 for key: a_5
-13:30:29 INFO listen#40872 Server_1816615081 coor: 8 len: 8 for key: a_5
-13:30:29 INFO listen#40872 Server_1816615081 Correct Coordinator for request: {"type": "PUT", "key": "a_5", "val": 5} : Preference list [ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:29 INFO listen#42312 Server_2040695960 Recieved RPUT request {"type": "RPUT", "key": "a_5", "val": 5, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:29 INFO listen#38176 Server_2059284446 Recieved RPUT request {"type": "RPUT", "key": "a_5", "val": 5, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:30 INFO udp_server Server_2059284446 Recieved PUT request {"type": "PUT", "key": "a_6", "val": 6}
-13:30:30 INFO udp_server Server_2059284446 coor: 8 len: 8 for key: a_6
-13:30:30 INFO udp_server Server_2059284446 Redirecting PUT request {"type": "PUT", "key": "a_6", "val": 6} to Name=Server_1816615081,Address=172.24.8.181:9006,
-13:30:30 INFO listen#59326 Server_1816615081 Recieved PUT request {"type": "PUT", "key": "a_6", "val": 6}
-13:30:30 INFO listen#59326 Server_1816615081 coor: 8 len: 8 for key: a_6
-13:30:30 INFO listen#59326 Server_1816615081 coor: 8 len: 8 for key: a_6
-13:30:30 INFO listen#59326 Server_1816615081 Correct Coordinator for request: {"type": "PUT", "key": "a_6", "val": 6} : Preference list [ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:30 INFO listen#42312 Server_2040695960 Recieved RPUT request {"type": "RPUT", "key": "a_6", "val": 6, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:30 INFO listen#38176 Server_2059284446 Recieved RPUT request {"type": "RPUT", "key": "a_6", "val": 6, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:30 INFO listen#44282 Server_2040695960 Memebership msg from Seed_2 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:30 INFO listen#59032 Server_1816615081 Memebership msg from Seed_3 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:31 INFO udp_server Server_1816615081 Recieved PUT request {"type": "PUT", "key": "a_7", "val": 7}
-13:30:31 INFO udp_server Server_1816615081 coor: 8 len: 8 for key: a_7
-13:30:31 INFO udp_server Server_1816615081 coor: 8 len: 8 for key: a_7
-13:30:31 INFO udp_server Server_1816615081 Correct Coordinator for request: {"type": "PUT", "key": "a_7", "val": 7} : Preference list [ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:31 INFO listen#42312 Server_2040695960 Recieved RPUT request {"type": "RPUT", "key": "a_7", "val": 7, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:31 INFO listen#38176 Server_2059284446 Recieved RPUT request {"type": "RPUT", "key": "a_7", "val": 7, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:32 INFO listen#40872 Server_1816615081 Memebership msg from Server_2884727557 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:32 INFO udp_server Server_1816615081 Recieved PUT request {"type": "PUT", "key": "a_8", "val": 8}
-13:30:32 INFO udp_server Server_1816615081 coor: 8 len: 8 for key: a_8
-13:30:32 INFO udp_server Server_1816615081 coor: 8 len: 8 for key: a_8
-13:30:32 INFO udp_server Server_1816615081 Correct Coordinator for request: {"type": "PUT", "key": "a_8", "val": 8} : Preference list [ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:32 INFO listen#42312 Server_2040695960 Recieved RPUT request {"type": "RPUT", "key": "a_8", "val": 8, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:32 INFO listen#38176 Server_2059284446 Recieved RPUT request {"type": "RPUT", "key": "a_8", "val": 8, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:32 INFO listen#51256 Server_2059284446 Memebership msg from Seed_0 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:33 INFO udp_server Server_2884727557 Recieved PUT request {"type": "PUT", "key": "a_9", "val": 9}
-13:30:33 INFO udp_server Server_2884727557 coor: 8 len: 8 for key: a_9
-13:30:33 INFO udp_server Server_2884727557 Redirecting PUT request {"type": "PUT", "key": "a_9", "val": 9} to Name=Server_1816615081,Address=172.24.8.181:9006,
-13:30:33 INFO listen#40872 Server_1816615081 Recieved PUT request {"type": "PUT", "key": "a_9", "val": 9}
-13:30:33 INFO listen#40872 Server_1816615081 coor: 8 len: 8 for key: a_9
-13:30:33 INFO listen#40872 Server_1816615081 coor: 8 len: 8 for key: a_9
-13:30:33 INFO listen#40872 Server_1816615081 Correct Coordinator for request: {"type": "PUT", "key": "a_9", "val": 9} : Preference list [ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:33 INFO listen#42312 Server_2040695960 Recieved RPUT request {"type": "RPUT", "key": "a_9", "val": 9, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:33 INFO listen#38176 Server_2059284446 Recieved RPUT request {"type": "RPUT", "key": "a_9", "val": 9, "ver": "{\"Server_1816615081\": \"1\", \"Server_2040695960\": \"0\", \"Server_2059284446\": \"0\"}"}
-13:30:33 INFO udp_server Server_2040695960 Recieved GET request {"type": "GET", "key": "a_0"}
-13:30:33 INFO udp_server Server_2040695960 coor: 8 len: 8 for key: a_0
-13:30:33 INFO udp_server Server_2040695960 Redirecting GET request to Name=Server_1816615081,Address=172.24.8.181:9006,
-13:30:33 INFO listen#40606 Server_1816615081 Recieved GET request {"type": "GET", "key": "a_0"}
-13:30:33 INFO listen#40606 Server_1816615081 coor: 8 len: 8 for key: a_0
-13:30:33 INFO listen#40606 Server_1816615081 coor: 8 len: 8 for key: a_0
-13:30:33 INFO listen#40606 Server_1816615081 Correct Coordinator for request: {"type": "GET", "key": "a_0"} : Preference list [ServerInfo(name='Server_1816615081', host='172.24.8.181', port=9006), ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:33 ERROR Thread-21 (send_message) Server_1816615081 Failed to send message to Name=Server_1816615081,Address=172.24.8.181:9006,: 'Server_1816615081'
-13:30:33 INFO listen#42312 Server_2040695960 Recieved RGET request {"type": "RGET", "key": "a_0"}
-13:30:33 INFO listen#38176 Server_2059284446 Recieved RGET request {"type": "RGET", "key": "a_0"}
-13:30:33 INFO listen#40606 Server_1816615081 Replying get request {"type": "RGET", "key": "a_0"}: key: a_0, val: ('0',)
-13:30:33 INFO MainThread maintest b'{"status": "1", "key": "a_0", "val": ["0"]}'
-13:30:33 INFO udp_server Server_2884727557 Recieved GET request {"type": "GET", "key": "a_1"}
-13:30:33 INFO udp_server Server_2884727557 coor: 8 len: 8 for key: a_1
-13:30:33 INFO udp_server Server_2884727557 Redirecting GET request to Name=Server_1816615081,Address=172.24.8.181:9006,
-13:30:33 INFO listen#40872 Server_1816615081 Recieved GET request {"type": "GET", "key": "a_1"}
-13:30:33 INFO listen#40872 Server_1816615081 coor: 8 len: 8 for key: a_1
-13:30:33 INFO listen#40872 Server_1816615081 coor: 8 len: 8 for key: a_1
-13:30:33 INFO listen#40872 Server_1816615081 Correct Coordinator for request: {"type": "GET", "key": "a_1"} : Preference list [ServerInfo(name='Server_1816615081', host='172.24.8.181', port=9006), ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:33 ERROR Thread-24 (send_message) Server_1816615081 Failed to send message to Name=Server_1816615081,Address=172.24.8.181:9006,: 'Server_1816615081'
-13:30:33 INFO listen#42312 Server_2040695960 Recieved RGET request {"type": "RGET", "key": "a_1"}
-13:30:33 INFO listen#38176 Server_2059284446 Recieved RGET request {"type": "RGET", "key": "a_1"}
-13:30:33 INFO listen#40872 Server_1816615081 Replying get request {"type": "RGET", "key": "a_1"}: key: a_1, val: ('1',)
-13:30:33 INFO MainThread maintest b'{"status": "1", "key": "a_1", "val": ["1"]}'
-13:30:33 INFO udp_server Server_2884727557 Recieved GET request {"type": "GET", "key": "a_2"}
-13:30:33 INFO udp_server Server_2884727557 coor: 8 len: 8 for key: a_2
-13:30:33 INFO udp_server Server_2884727557 Redirecting GET request to Name=Server_1816615081,Address=172.24.8.181:9006,
-13:30:33 INFO listen#40872 Server_1816615081 Recieved GET request {"type": "GET", "key": "a_2"}
-13:30:33 INFO listen#40872 Server_1816615081 coor: 8 len: 8 for key: a_2
-13:30:33 INFO listen#40872 Server_1816615081 coor: 8 len: 8 for key: a_2
-13:30:33 INFO listen#40872 Server_1816615081 Correct Coordinator for request: {"type": "GET", "key": "a_2"} : Preference list [ServerInfo(name='Server_1816615081', host='172.24.8.181', port=9006), ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:33 ERROR Thread-27 (send_message) Server_1816615081 Failed to send message to Name=Server_1816615081,Address=172.24.8.181:9006,: 'Server_1816615081'
-13:30:33 INFO listen#42312 Server_2040695960 Recieved RGET request {"type": "RGET", "key": "a_2"}
-13:30:33 INFO listen#38176 Server_2059284446 Recieved RGET request {"type": "RGET", "key": "a_2"}
-13:30:33 INFO listen#40872 Server_1816615081 Replying get request {"type": "RGET", "key": "a_2"}: key: a_2, val: ('2',)
-13:30:33 INFO MainThread maintest b'{"status": "1", "key": "a_2", "val": ["2"]}'
-13:30:33 INFO udp_server Server_2040695960 Recieved GET request {"type": "GET", "key": "a_3"}
-13:30:33 INFO udp_server Server_2040695960 coor: 8 len: 8 for key: a_3
-13:30:33 INFO udp_server Server_2040695960 Redirecting GET request to Name=Server_1816615081,Address=172.24.8.181:9006,
-13:30:33 INFO listen#40606 Server_1816615081 Recieved GET request {"type": "GET", "key": "a_3"}
-13:30:33 INFO listen#40606 Server_1816615081 coor: 8 len: 8 for key: a_3
-13:30:33 INFO listen#40606 Server_1816615081 coor: 8 len: 8 for key: a_3
-13:30:33 INFO listen#40606 Server_1816615081 Correct Coordinator for request: {"type": "GET", "key": "a_3"} : Preference list [ServerInfo(name='Server_1816615081', host='172.24.8.181', port=9006), ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:33 ERROR Thread-30 (send_message) Server_1816615081 Failed to send message to Name=Server_1816615081,Address=172.24.8.181:9006,: 'Server_1816615081'
-13:30:33 INFO listen#42312 Server_2040695960 Recieved RGET request {"type": "RGET", "key": "a_3"}
-13:30:33 INFO listen#38176 Server_2059284446 Recieved RGET request {"type": "RGET", "key": "a_3"}
-13:30:33 INFO listen#40606 Server_1816615081 Replying get request {"type": "RGET", "key": "a_3"}: key: a_3, val: ('3',)
-13:30:33 INFO MainThread maintest b'{"status": "1", "key": "a_3", "val": ["3"]}'
-13:30:33 INFO udp_server Server_2059284446 Recieved GET request {"type": "GET", "key": "a_4"}
-13:30:33 INFO udp_server Server_2059284446 coor: 8 len: 8 for key: a_4
-13:30:33 INFO udp_server Server_2059284446 Redirecting GET request to Name=Server_1816615081,Address=172.24.8.181:9006,
-13:30:33 INFO listen#59326 Server_1816615081 Recieved GET request {"type": "GET", "key": "a_4"}
-13:30:33 INFO listen#59326 Server_1816615081 coor: 8 len: 8 for key: a_4
-13:30:33 INFO listen#59326 Server_1816615081 coor: 8 len: 8 for key: a_4
-13:30:33 INFO listen#59326 Server_1816615081 Correct Coordinator for request: {"type": "GET", "key": "a_4"} : Preference list [ServerInfo(name='Server_1816615081', host='172.24.8.181', port=9006), ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:33 ERROR Thread-33 (send_message) Server_1816615081 Failed to send message to Name=Server_1816615081,Address=172.24.8.181:9006,: 'Server_1816615081'
-13:30:33 INFO listen#42312 Server_2040695960 Recieved RGET request {"type": "RGET", "key": "a_4"}
-13:30:33 INFO listen#38176 Server_2059284446 Recieved RGET request {"type": "RGET", "key": "a_4"}
-13:30:33 INFO listen#59326 Server_1816615081 Replying get request {"type": "RGET", "key": "a_4"}: key: a_4, val: ('4',)
-13:30:33 INFO MainThread maintest b'{"status": "1", "key": "a_4", "val": ["4"]}'
-13:30:33 INFO udp_server Server_1816615081 Recieved GET request {"type": "GET", "key": "a_5"}
-13:30:33 INFO udp_server Server_1816615081 coor: 8 len: 8 for key: a_5
-13:30:33 INFO udp_server Server_1816615081 coor: 8 len: 8 for key: a_5
-13:30:33 INFO udp_server Server_1816615081 Correct Coordinator for request: {"type": "GET", "key": "a_5"} : Preference list [ServerInfo(name='Server_1816615081', host='172.24.8.181', port=9006), ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:33 ERROR Thread-36 (send_message) Server_1816615081 Failed to send message to Name=Server_1816615081,Address=172.24.8.181:9006,: 'Server_1816615081'
-13:30:33 INFO listen#42312 Server_2040695960 Recieved RGET request {"type": "RGET", "key": "a_5"}
-13:30:33 INFO listen#38176 Server_2059284446 Recieved RGET request {"type": "RGET", "key": "a_5"}
-13:30:33 INFO udp_server Server_1816615081 Replying get request {"type": "RGET", "key": "a_5"}: key: a_5, val: ('5',)
-13:30:33 INFO MainThread maintest b'{"status": "1", "key": "a_5", "val": ["5"]}'
-13:30:33 INFO udp_server Server_1816615081 Recieved GET request {"type": "GET", "key": "a_6"}
-13:30:33 INFO udp_server Server_1816615081 coor: 8 len: 8 for key: a_6
-13:30:33 INFO udp_server Server_1816615081 coor: 8 len: 8 for key: a_6
-13:30:33 INFO udp_server Server_1816615081 Correct Coordinator for request: {"type": "GET", "key": "a_6"} : Preference list [ServerInfo(name='Server_1816615081', host='172.24.8.181', port=9006), ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:33 ERROR Thread-39 (send_message) Server_1816615081 Failed to send message to Name=Server_1816615081,Address=172.24.8.181:9006,: 'Server_1816615081'
-13:30:33 INFO listen#42312 Server_2040695960 Recieved RGET request {"type": "RGET", "key": "a_6"}
-13:30:33 INFO listen#38176 Server_2059284446 Recieved RGET request {"type": "RGET", "key": "a_6"}
-13:30:33 INFO udp_server Server_1816615081 Replying get request {"type": "RGET", "key": "a_6"}: key: a_6, val: ('6',)
-13:30:33 INFO MainThread maintest b'{"status": "1", "key": "a_6", "val": ["6"]}'
-13:30:33 INFO udp_server Server_2059284446 Recieved GET request {"type": "GET", "key": "a_7"}
-13:30:33 INFO udp_server Server_2059284446 coor: 8 len: 8 for key: a_7
-13:30:33 INFO udp_server Server_2059284446 Redirecting GET request to Name=Server_1816615081,Address=172.24.8.181:9006,
-13:30:33 INFO listen#59326 Server_1816615081 Recieved GET request {"type": "GET", "key": "a_7"}
-13:30:33 INFO listen#59326 Server_1816615081 coor: 8 len: 8 for key: a_7
-13:30:33 INFO listen#59326 Server_1816615081 coor: 8 len: 8 for key: a_7
-13:30:33 INFO listen#59326 Server_1816615081 Correct Coordinator for request: {"type": "GET", "key": "a_7"} : Preference list [ServerInfo(name='Server_1816615081', host='172.24.8.181', port=9006), ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:33 ERROR Thread-42 (send_message) Server_1816615081 Failed to send message to Name=Server_1816615081,Address=172.24.8.181:9006,: 'Server_1816615081'
-13:30:33 INFO listen#42312 Server_2040695960 Recieved RGET request {"type": "RGET", "key": "a_7"}
-13:30:33 INFO listen#38176 Server_2059284446 Recieved RGET request {"type": "RGET", "key": "a_7"}
-13:30:33 INFO listen#59326 Server_1816615081 Replying get request {"type": "RGET", "key": "a_7"}: key: a_7, val: ('7',)
-13:30:33 INFO MainThread maintest b'{"status": "1", "key": "a_7", "val": ["7"]}'
-13:30:33 INFO udp_server Server_1816615081 Recieved GET request {"type": "GET", "key": "a_8"}
-13:30:33 INFO udp_server Server_1816615081 coor: 8 len: 8 for key: a_8
-13:30:33 INFO udp_server Server_1816615081 coor: 8 len: 8 for key: a_8
-13:30:33 INFO udp_server Server_1816615081 Correct Coordinator for request: {"type": "GET", "key": "a_8"} : Preference list [ServerInfo(name='Server_1816615081', host='172.24.8.181', port=9006), ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:33 ERROR Thread-45 (send_message) Server_1816615081 Failed to send message to Name=Server_1816615081,Address=172.24.8.181:9006,: 'Server_1816615081'
-13:30:33 INFO listen#42312 Server_2040695960 Recieved RGET request {"type": "RGET", "key": "a_8"}
-13:30:33 INFO listen#38176 Server_2059284446 Recieved RGET request {"type": "RGET", "key": "a_8"}
-13:30:33 INFO udp_server Server_1816615081 Replying get request {"type": "RGET", "key": "a_8"}: key: a_8, val: ('8',)
-13:30:33 INFO MainThread maintest b'{"status": "1", "key": "a_8", "val": ["8"]}'
-13:30:33 INFO udp_server Server_2059284446 Recieved GET request {"type": "GET", "key": "a_9"}
-13:30:33 INFO udp_server Server_2059284446 coor: 8 len: 8 for key: a_9
-13:30:33 INFO udp_server Server_2059284446 Redirecting GET request to Name=Server_1816615081,Address=172.24.8.181:9006,
-13:30:33 INFO listen#59326 Server_1816615081 Recieved GET request {"type": "GET", "key": "a_9"}
-13:30:33 INFO listen#59326 Server_1816615081 coor: 8 len: 8 for key: a_9
-13:30:33 INFO listen#59326 Server_1816615081 coor: 8 len: 8 for key: a_9
-13:30:33 INFO listen#59326 Server_1816615081 Correct Coordinator for request: {"type": "GET", "key": "a_9"} : Preference list [ServerInfo(name='Server_1816615081', host='172.24.8.181', port=9006), ServerInfo(name='Server_2040695960', host='172.24.8.181', port=9007), ServerInfo(name='Server_2059284446', host='172.24.8.181', port=9004)]
-13:30:33 ERROR Thread-48 (send_message) Server_1816615081 Failed to send message to Name=Server_1816615081,Address=172.24.8.181:9006,: 'Server_1816615081'
-13:30:33 INFO listen#42312 Server_2040695960 Recieved RGET request {"type": "RGET", "key": "a_9"}
-13:30:33 INFO listen#38176 Server_2059284446 Recieved RGET request {"type": "RGET", "key": "a_9"}
-13:30:33 INFO listen#59326 Server_1816615081 Replying get request {"type": "RGET", "key": "a_9"}: key: a_9, val: ('9',)
-13:30:33 INFO MainThread maintest b'{"status": "1", "key": "a_9", "val": ["9"]}'
-13:30:33 INFO listen#44282 Server_2040695960 Memebership msg from Seed_2 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:33 INFO listen#42046 Server_2040695960 Memebership msg from Seed_3 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:34 INFO listen#49412 Server_2884727557 Memebership msg from Server_1816615081 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:35 INFO listen#40606 Server_1816615081 Memebership msg from Server_2040695960 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:35 INFO listen#51256 Server_2059284446 Memebership msg from Seed_0 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:36 INFO listen#40872 Server_1816615081 Memebership msg from Server_2884727557 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:36 INFO listen#52698 Server_2040695960 Memebership msg from Seed_0 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:37 INFO listen#36942 Server_2059284446 Memebership msg from Seed_3 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:37 INFO listen#37674 Server_2884727557 Memebership msg from Server_2059284446 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:37 INFO listen#49960 Server_2884727557 Memebership msg from Server_2040695960 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:37 INFO listen#51256 Server_2059284446 Memebership msg from Seed_0 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:35 INFO listen#40872 Server_1816615081 Memebership msg from Server_2884727557 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:36 INFO listen#42530 Server_2040695960 Memebership msg from Server_2059284446 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:36 INFO listen#47822 Server_2059284446 Memebership msg from Server_2040695960 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:37 INFO listen#42250 Server_2040695960 Memebership msg from Seed_1 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:38 INFO listen#44282 Server_2040695960 Memebership msg from Seed_2 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:39 INFO listen#44282 Server_2040695960 Memebership msg from Seed_2 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:41 INFO listen#52698 Server_2040695960 Memebership msg from Seed_0 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:41 INFO listen#42250 Server_2040695960 Memebership msg from Seed_1 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:41 INFO listen#42046 Server_2040695960 Memebership msg from Seed_3 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:41 INFO listen#42530 Server_2040695960 Memebership msg from Server_2059284446 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:41 INFO listen#40872 Server_1816615081 Memebership msg from Server_2884727557 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:42 INFO listen#59326 Server_1816615081 Memebership msg from Server_2059284446 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:42 INFO listen#50848 Server_2059284446 Memebership msg from Seed_2 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:43 INFO listen#51256 Server_2059284446 Memebership msg from Seed_0 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:43 INFO listen#36942 Server_2059284446 Memebership msg from Seed_3 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:43 INFO listen#42530 Server_2040695960 Memebership msg from Server_2059284446 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:43 INFO listen#47822 Server_2059284446 Memebership msg from Server_2040695960 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:44 INFO listen#40366 Server_1816615081 Memebership msg from Seed_0 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:45 INFO listen#42530 Server_2040695960 Memebership msg from Server_2059284446 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:45 INFO listen#49412 Server_2884727557 Memebership msg from Server_1816615081 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:46 INFO listen#50848 Server_2059284446 Memebership msg from Seed_2 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:46 INFO listen#37222 Server_2059284446 Memebership msg from Seed_1 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:47 INFO listen#45622 Server_2884727557 Memebership msg from Seed_0 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:48 INFO listen#42530 Server_2040695960 Memebership msg from Server_2059284446 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:49 INFO listen#40606 Server_1816615081 Memebership msg from Server_2040695960 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:49 INFO listen#50660 Server_2040695960 Memebership msg from Server_2884727557 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:50 INFO listen#51256 Server_2059284446 Memebership msg from Seed_0 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:50 INFO listen#50660 Server_2040695960 Memebership msg from Server_2884727557 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:51 INFO listen#51232 Server_1816615081 Memebership msg from Seed_1 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:51 INFO listen#36942 Server_2059284446 Memebership msg from Seed_3 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:52 INFO listen#49960 Server_2884727557 Memebership msg from Server_2040695960 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:53 INFO listen#40366 Server_1816615081 Memebership msg from Seed_0 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:53 INFO listen#51232 Server_1816615081 Memebership msg from Seed_1 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:53 INFO listen#37674 Server_2884727557 Memebership msg from Server_2059284446 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:54 INFO listen#40872 Server_1816615081 Memebership msg from Server_2884727557 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:55 INFO listen#52698 Server_2040695960 Memebership msg from Seed_0 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:55 INFO listen#40872 Server_1816615081 Memebership msg from Server_2884727557 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:56 INFO listen#49674 Server_2884727557 Memebership msg from Seed_2 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:56 INFO listen#45346 Server_2884727557 Memebership msg from Seed_3 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:56 INFO listen#37222 Server_2059284446 Memebership msg from Seed_1 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:58 INFO listen#51256 Server_2059284446 Memebership msg from Seed_0 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:58 INFO listen#59032 Server_1816615081 Memebership msg from Seed_3 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:30:58 INFO listen#50254 Server_2884727557 Memebership msg from Seed_1 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:30:59 INFO listen#44282 Server_2040695960 Memebership msg from Seed_2 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:59 INFO listen#42530 Server_2040695960 Memebership msg from Server_2059284446 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:30:59 INFO listen#47822 Server_2059284446 Memebership msg from Server_2040695960 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:30:59 INFO listen#49412 Server_2884727557 Memebership msg from Server_1816615081 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:00 INFO listen#44282 Server_2040695960 Memebership msg from Seed_2 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:01 INFO listen#47822 Server_2059284446 Memebership msg from Server_2040695960 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:02 INFO listen#50848 Server_2059284446 Memebership msg from Seed_2 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:02 INFO listen#42046 Server_2040695960 Memebership msg from Seed_3 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:02 INFO listen#50254 Server_2884727557 Memebership msg from Seed_1 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:03 INFO listen#59326 Server_1816615081 Memebership msg from Server_2059284446 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:03 INFO listen#49960 Server_2884727557 Memebership msg from Server_2040695960 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:04 INFO listen#44282 Server_2040695960 Memebership msg from Seed_2 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:05 INFO listen#40606 Server_1816615081 Memebership msg from Server_2040695960 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:06 INFO listen#50848 Server_2059284446 Memebership msg from Seed_2 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:06 INFO listen#51256 Server_2059284446 Memebership msg from Seed_0 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:06 INFO listen#36942 Server_2059284446 Memebership msg from Seed_3 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:06 INFO listen#37222 Server_2059284446 Memebership msg from Seed_1 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:06 INFO listen#59326 Server_1816615081 Memebership msg from Server_2059284446 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:07 INFO listen#45622 Server_2884727557 Memebership msg from Seed_0 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:05 INFO listen#51232 Server_1816615081 Memebership msg from Seed_1 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:06 INFO listen#51530 Server_2059284446 Memebership msg from Server_2884727557 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:07 INFO listen#37674 Server_2884727557 Memebership msg from Server_2059284446 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:08 INFO listen#42250 Server_2040695960 Memebership msg from Seed_1 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:08 INFO listen#51530 Server_2059284446 Memebership msg from Server_2884727557 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:09 INFO listen#42312 Server_2040695960 Memebership msg from Server_1816615081 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:09 INFO listen#45346 Server_2884727557 Memebership msg from Seed_3 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:10 INFO listen#37222 Server_2059284446 Memebership msg from Seed_1 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:10 INFO listen#42046 Server_2040695960 Memebership msg from Seed_3 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:10 INFO listen#45622 Server_2884727557 Memebership msg from Seed_0 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:10 INFO listen#40606 Server_1816615081 Memebership msg from Server_2040695960 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:11 INFO listen#49412 Server_2884727557 Memebership msg from Server_1816615081 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:11 INFO listen#50848 Server_2059284446 Memebership msg from Seed_2 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:11 INFO listen#59032 Server_1816615081 Memebership msg from Seed_3 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:12 INFO listen#45346 Server_2884727557 Memebership msg from Seed_3 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:12 INFO listen#59326 Server_1816615081 Memebership msg from Server_2059284446 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:12 INFO listen#50660 Server_2040695960 Memebership msg from Server_2884727557 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:13 INFO listen#44282 Server_2040695960 Memebership msg from Seed_2 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:14 INFO listen#44282 Server_2040695960 Memebership msg from Seed_2 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:14 INFO listen#45346 Server_2884727557 Memebership msg from Seed_3 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:14 INFO listen#40606 Server_1816615081 Memebership msg from Server_2040695960 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:15 INFO listen#42312 Server_2040695960 Memebership msg from Server_1816615081 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:15 INFO listen#45346 Server_2884727557 Memebership msg from Seed_3 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:16 INFO listen#42312 Server_2040695960 Memebership msg from Server_1816615081 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:16 INFO listen#37674 Server_2884727557 Memebership msg from Server_2059284446 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:16 INFO listen#40606 Server_1816615081 Memebership msg from Server_2040695960 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:17 INFO listen#49674 Server_2884727557 Memebership msg from Seed_2 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:17 INFO listen#49960 Server_2884727557 Memebership msg from Server_2040695960 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:18 INFO listen#51232 Server_1816615081 Memebership msg from Seed_1 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:18 INFO listen#37674 Server_2884727557 Memebership msg from Server_2059284446 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:19 INFO listen#42046 Server_2040695960 Memebership msg from Seed_3 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:19 INFO listen#51256 Server_2059284446 Memebership msg from Seed_0 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:20 INFO listen#51232 Server_1816615081 Memebership msg from Seed_1 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:20 INFO listen#37674 Server_2884727557 Memebership msg from Server_2059284446 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:20 INFO listen#50660 Server_2040695960 Memebership msg from Server_2884727557 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:20 INFO listen#47822 Server_2059284446 Memebership msg from Server_2040695960 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:21 INFO listen#50848 Server_2059284446 Memebership msg from Seed_2 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:21 INFO listen#37222 Server_2059284446 Memebership msg from Seed_1 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:22 INFO listen#59326 Server_1816615081 Memebership msg from Server_2059284446 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:23 INFO listen#45622 Server_2884727557 Memebership msg from Seed_0 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:23 INFO listen#59032 Server_1816615081 Memebership msg from Seed_3 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:24 INFO listen#45622 Server_2884727557 Memebership msg from Seed_0 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:24 INFO listen#51232 Server_1816615081 Memebership msg from Seed_1 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:24 INFO listen#59326 Server_1816615081 Memebership msg from Server_2059284446 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:25 INFO listen#42312 Server_2040695960 Memebership msg from Server_1816615081 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:25 INFO listen#50848 Server_2059284446 Memebership msg from Seed_2 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:25 INFO listen#40872 Server_1816615081 Memebership msg from Server_2884727557 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:25 INFO listen#47822 Server_2059284446 Memebership msg from Server_2040695960 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:27 INFO listen#40366 Server_1816615081 Memebership msg from Seed_0 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:27 INFO listen#59032 Server_1816615081 Memebership msg from Seed_3 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:27 INFO listen#42250 Server_2040695960 Memebership msg from Seed_1 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:27 INFO listen#42530 Server_2040695960 Memebership msg from Server_2059284446 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:28 INFO listen#38176 Server_2059284446 Memebership msg from Server_1816615081 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:28 INFO listen#41170 Server_1816615081 Memebership msg from Seed_2 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:28 INFO listen#59032 Server_1816615081 Memebership msg from Seed_3 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:28 INFO listen#37674 Server_2884727557 Memebership msg from Server_2059284446 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:28 INFO listen#47822 Server_2059284446 Memebership msg from Server_2040695960 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:29 INFO listen#45622 Server_2884727557 Memebership msg from Seed_0 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:31 INFO listen#36942 Server_2059284446 Memebership msg from Seed_3 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:31 INFO listen#51530 Server_2059284446 Memebership msg from Server_2884727557 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:31 INFO listen#40606 Server_1816615081 Memebership msg from Server_2040695960 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:32 INFO listen#44282 Server_2040695960 Memebership msg from Seed_2 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:32 INFO listen#45346 Server_2884727557 Memebership msg from Seed_3 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:33 INFO listen#49412 Server_2884727557 Memebership msg from Server_1816615081 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:34 INFO listen#52698 Server_2040695960 Memebership msg from Seed_0 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:34 INFO listen#37674 Server_2884727557 Memebership msg from Server_2059284446 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:34 INFO listen#51530 Server_2059284446 Memebership msg from Server_2884727557 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:34 INFO listen#49960 Server_2884727557 Memebership msg from Server_2040695960 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:35 INFO listen#42046 Server_2040695960 Memebership msg from Seed_3 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:35 INFO listen#52698 Server_2040695960 Memebership msg from Seed_0 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:35 INFO listen#47822 Server_2059284446 Memebership msg from Server_2040695960 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:36 INFO listen#51232 Server_1816615081 Memebership msg from Seed_1 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:34 INFO listen#50848 Server_2059284446 Memebership msg from Seed_2 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
-13:31:34 INFO listen#45346 Server_2884727557 Memebership msg from Seed_3 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:34 INFO listen#42530 Server_2040695960 Memebership msg from Server_2059284446 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:35 INFO listen#44282 Server_2040695960 Memebership msg from Seed_2 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:35 INFO listen#40366 Server_1816615081 Memebership msg from Seed_0 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:35 INFO listen#37674 Server_2884727557 Memebership msg from Server_2059284446 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:35 INFO listen#50660 Server_2040695960 Memebership msg from Server_2884727557 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:36 INFO listen#49674 Server_2884727557 Memebership msg from Seed_2 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:36 INFO listen#42250 Server_2040695960 Memebership msg from Seed_1 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:36 INFO listen#40872 Server_1816615081 Memebership msg from Server_2884727557 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:37 INFO listen#40606 Server_1816615081 Memebership msg from Server_2040695960 to Server_1816615081: 1816615081_2040695960_2059284446_2884727557_
-13:31:37 INFO listen#49674 Server_2884727557 Memebership msg from Seed_2 to Server_2884727557: 1816615081_2040695960_2059284446_2884727557_
-13:31:37 INFO listen#42046 Server_2040695960 Memebership msg from Seed_3 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:37 INFO listen#42530 Server_2040695960 Memebership msg from Server_2059284446 to Server_2040695960: 1816615081_2040695960_2059284446_2884727557_
-13:31:38 INFO listen#51530 Server_2059284446 Memebership msg from Server_2884727557 to Server_2059284446: 1816615081_2040695960_2059284446_2884727557_
+13:53:18 INFO MainThread Server_821320311 Created table Server_821320311
+13:53:18 INFO MainThread Server_4013513533 Created table Server_4013513533
+13:53:18 INFO MainThread Server_172063064 Created table Server_172063064
+13:53:18 INFO MainThread Server_4004120530 Created table Server_4004120530
+13:53:20 INFO MainThread Seed_0 Listening on 172.24.8.181:9000
+13:53:20 INFO MainThread Seed_1 Listening on 172.24.8.181:9001
+13:53:20 INFO MainThread Seed_2 Listening on 172.24.8.181:9002
+13:53:20 INFO MainThread Seed_3 Listening on 172.24.8.181:9003
+13:53:20 INFO MainThread Server_821320311 Listening on 172.24.8.181:9004
+13:53:20 INFO udp_server Server_821320311 UDP server listening on 172.24.8.181:9004
+13:53:20 INFO MainThread Server_4013513533 Listening on 172.24.8.181:9005
+13:53:20 INFO udp_server Server_4013513533 UDP server listening on 172.24.8.181:9005
+13:53:20 INFO MainThread Server_172063064 Listening on 172.24.8.181:9006
+13:53:20 INFO udp_server Server_172063064 UDP server listening on 172.24.8.181:9006
+13:53:20 INFO MainThread Server_4004120530 Listening on 172.24.8.181:9007
+13:53:20 INFO udp_server Server_4004120530 UDP server listening on 172.24.8.181:9007
+13:53:23 INFO listen#49078 Server_172063064 Memebership msg from Seed_1 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:23 INFO listen#49078 Server_172063064 Transferring keys to new server: Name=Server_821320311,Address=172.24.8.181:9004,
+13:53:23 INFO listen#49078 Server_172063064 Transferring keys to new server: Name=Server_4004120530,Address=172.24.8.181:9007,
+13:53:23 INFO listen#49078 Server_172063064 Transferring keys to new server: Name=Server_4013513533,Address=172.24.8.181:9005,
+13:53:24 INFO listen#48830 Server_4004120530 Memebership msg from Seed_1 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:24 INFO listen#48830 Server_4004120530 Transferring keys to new server: Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:24 INFO listen#49360 Server_172063064 Memebership msg from Seed_0 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:24 INFO listen#48830 Server_4004120530 Transferring keys to new server: Name=Server_821320311,Address=172.24.8.181:9004,
+13:53:24 INFO listen#48830 Server_4004120530 Transferring keys to new server: Name=Server_4013513533,Address=172.24.8.181:9005,
+13:53:24 INFO listen#49122 Server_4004120530 Memebership msg from Server_172063064 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:25 INFO listen#47750 Server_821320311 Memebership msg from Seed_2 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:53:25 INFO listen#47750 Server_821320311 Transferring keys to new server: Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:25 INFO listen#47750 Server_821320311 Transferring keys to new server: Name=Server_4004120530,Address=172.24.8.181:9007,
+13:53:25 INFO listen#47750 Server_821320311 Transferring keys to new server: Name=Server_4013513533,Address=172.24.8.181:9005,
+13:53:26 INFO listen#53986 Server_4013513533 Memebership msg from Seed_2 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:26 INFO listen#53986 Server_4013513533 Transferring keys to new server: Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:26 INFO listen#53986 Server_4013513533 Transferring keys to new server: Name=Server_821320311,Address=172.24.8.181:9004,
+13:53:26 INFO listen#53986 Server_4013513533 Transferring keys to new server: Name=Server_4004120530,Address=172.24.8.181:9007,
+13:53:26 INFO listen#54290 Server_4013513533 Memebership msg from Server_821320311 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:27 INFO listen#48830 Server_4004120530 Memebership msg from Seed_1 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:28 INFO listen#54558 Server_4013513533 Memebership msg from Seed_3 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:28 INFO listen#49360 Server_172063064 Memebership msg from Seed_0 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:28 INFO listen#54860 Server_4013513533 Memebership msg from Server_4004120530 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:29 INFO listen#33022 Server_4004120530 Memebership msg from Server_821320311 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:30 INFO listen#48830 Server_4004120530 Memebership msg from Seed_1 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:30 INFO listen#55636 Server_172063064 Memebership msg from Server_4013513533 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:30 INFO listen#33322 Server_4004120530 Memebership msg from Seed_2 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:31 INFO listen#44956 Server_821320311 Memebership msg from Seed_3 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:53:32 INFO listen#54290 Server_4013513533 Memebership msg from Server_821320311 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:33 INFO listen#45294 Server_821320311 Memebership msg from Seed_0 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:53:33 INFO listen#33630 Server_4004120530 Memebership msg from Seed_3 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:33 INFO listen#55900 Server_172063064 Memebership msg from Seed_2 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:34 INFO listen#49078 Server_172063064 Memebership msg from Seed_1 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:34 INFO listen#54860 Server_4013513533 Memebership msg from Server_4004120530 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:35 INFO listen#49360 Server_172063064 Memebership msg from Seed_0 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:35 INFO listen#53986 Server_4013513533 Memebership msg from Seed_2 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:33 INFO listen#44956 Server_821320311 Memebership msg from Seed_3 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:53:34 INFO listen#49078 Server_172063064 Memebership msg from Seed_1 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:35 INFO listen#55636 Server_172063064 Memebership msg from Server_4013513533 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:35 INFO listen#34784 Server_821320311 Memebership msg from Seed_1 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:53:35 INFO listen#49122 Server_4004120530 Memebership msg from Server_172063064 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:36 INFO udp_server Server_172063064 Recieved PUT request {"type": "PUT", "key": "a_0", "val": 0}
+13:53:36 INFO udp_server Server_172063064 coor: 8 len: 8 for key: a_0
+13:53:36 INFO udp_server Server_172063064 coor: 8 len: 8 for key: a_0
+13:53:36 INFO udp_server Server_172063064 Correct Coordinator for request: {"type": "PUT", "key": "a_0", "val": 0} : Preference list [ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:36 INFO listen#49122 Server_4004120530 Recieved RPUT request {"type": "RPUT", "key": "a_0", "val": 0, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:36 INFO listen#35090 Server_821320311 Recieved RPUT request {"type": "RPUT", "key": "a_0", "val": 0, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:37 INFO listen#45294 Server_821320311 Memebership msg from Seed_0 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:53:37 INFO listen#44956 Server_821320311 Memebership msg from Seed_3 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:53:37 INFO udp_server Server_4013513533 Recieved PUT request {"type": "PUT", "key": "a_1", "val": 1}
+13:53:37 INFO udp_server Server_4013513533 coor: 8 len: 8 for key: a_1
+13:53:37 INFO udp_server Server_4013513533 Redirecting PUT request {"type": "PUT", "key": "a_1", "val": 1} to Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:37 INFO listen#55636 Server_172063064 Recieved PUT request {"type": "PUT", "key": "a_1", "val": 1}
+13:53:37 INFO listen#55636 Server_172063064 coor: 8 len: 8 for key: a_1
+13:53:37 INFO listen#55636 Server_172063064 coor: 8 len: 8 for key: a_1
+13:53:37 INFO listen#55636 Server_172063064 Correct Coordinator for request: {"type": "PUT", "key": "a_1", "val": 1} : Preference list [ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:37 INFO listen#35090 Server_821320311 Recieved RPUT request {"type": "RPUT", "key": "a_1", "val": 1, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:37 INFO listen#49122 Server_4004120530 Recieved RPUT request {"type": "RPUT", "key": "a_1", "val": 1, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:37 INFO listen#33322 Server_4004120530 Memebership msg from Seed_2 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:38 INFO udp_server Server_821320311 Recieved PUT request {"type": "PUT", "key": "a_2", "val": 2}
+13:53:38 INFO udp_server Server_821320311 coor: 8 len: 8 for key: a_2
+13:53:38 INFO udp_server Server_821320311 Redirecting PUT request {"type": "PUT", "key": "a_2", "val": 2} to Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:38 INFO listen#60200 Server_4004120530 Memebership msg from Server_4013513533 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:38 INFO listen#39772 Server_172063064 Recieved PUT request {"type": "PUT", "key": "a_2", "val": 2}
+13:53:38 INFO listen#34784 Server_821320311 Memebership msg from Seed_1 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:53:38 INFO listen#39772 Server_172063064 coor: 8 len: 8 for key: a_2
+13:53:38 INFO listen#39772 Server_172063064 coor: 8 len: 8 for key: a_2
+13:53:38 INFO listen#39772 Server_172063064 Correct Coordinator for request: {"type": "PUT", "key": "a_2", "val": 2} : Preference list [ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:38 INFO listen#35090 Server_821320311 Recieved RPUT request {"type": "RPUT", "key": "a_2", "val": 2, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:38 INFO listen#49122 Server_4004120530 Recieved RPUT request {"type": "RPUT", "key": "a_2", "val": 2, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:38 INFO listen#54290 Server_4013513533 Memebership msg from Server_821320311 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:38 INFO listen#40068 Server_172063064 Memebership msg from Server_4004120530 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:39 INFO listen#49360 Server_172063064 Memebership msg from Seed_0 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:39 INFO udp_server Server_821320311 Recieved PUT request {"type": "PUT", "key": "a_3", "val": 3}
+13:53:39 INFO udp_server Server_821320311 coor: 8 len: 8 for key: a_3
+13:53:39 INFO udp_server Server_821320311 Redirecting PUT request {"type": "PUT", "key": "a_3", "val": 3} to Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:39 INFO listen#39772 Server_172063064 Recieved PUT request {"type": "PUT", "key": "a_3", "val": 3}
+13:53:39 INFO listen#39772 Server_172063064 coor: 8 len: 8 for key: a_3
+13:53:39 INFO listen#39772 Server_172063064 coor: 8 len: 8 for key: a_3
+13:53:39 INFO listen#39772 Server_172063064 Correct Coordinator for request: {"type": "PUT", "key": "a_3", "val": 3} : Preference list [ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:39 INFO listen#35090 Server_821320311 Recieved RPUT request {"type": "RPUT", "key": "a_3", "val": 3, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:39 INFO listen#49122 Server_4004120530 Recieved RPUT request {"type": "RPUT", "key": "a_3", "val": 3, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:39 INFO listen#39772 Server_172063064 Memebership msg from Server_821320311 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:40 INFO listen#60484 Server_4004120530 Memebership msg from Seed_0 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:40 INFO listen#59274 Server_4013513533 Memebership msg from Seed_1 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:40 INFO udp_server Server_4004120530 Recieved PUT request {"type": "PUT", "key": "a_4", "val": 4}
+13:53:40 INFO udp_server Server_4004120530 coor: 8 len: 8 for key: a_4
+13:53:40 INFO udp_server Server_4004120530 Redirecting PUT request {"type": "PUT", "key": "a_4", "val": 4} to Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:40 INFO listen#40068 Server_172063064 Recieved PUT request {"type": "PUT", "key": "a_4", "val": 4}
+13:53:40 INFO listen#40068 Server_172063064 coor: 8 len: 8 for key: a_4
+13:53:40 INFO listen#40068 Server_172063064 coor: 8 len: 8 for key: a_4
+13:53:40 INFO listen#40068 Server_172063064 Correct Coordinator for request: {"type": "PUT", "key": "a_4", "val": 4} : Preference list [ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:40 INFO listen#35090 Server_821320311 Recieved RPUT request {"type": "RPUT", "key": "a_4", "val": 4, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:40 INFO listen#49122 Server_4004120530 Recieved RPUT request {"type": "RPUT", "key": "a_4", "val": 4, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:41 INFO listen#33322 Server_4004120530 Memebership msg from Seed_2 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:41 INFO udp_server Server_172063064 Recieved PUT request {"type": "PUT", "key": "a_5", "val": 5}
+13:53:41 INFO udp_server Server_172063064 coor: 8 len: 8 for key: a_5
+13:53:41 INFO udp_server Server_172063064 coor: 8 len: 8 for key: a_5
+13:53:41 INFO udp_server Server_172063064 Correct Coordinator for request: {"type": "PUT", "key": "a_5", "val": 5} : Preference list [ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:41 INFO listen#35090 Server_821320311 Recieved RPUT request {"type": "RPUT", "key": "a_5", "val": 5, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:41 INFO listen#49122 Server_4004120530 Recieved RPUT request {"type": "RPUT", "key": "a_5", "val": 5, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:42 INFO listen#35414 Server_821320311 Memebership msg from Server_4013513533 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:53:42 INFO listen#39772 Server_172063064 Memebership msg from Server_821320311 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:42 INFO udp_server Server_4004120530 Recieved PUT request {"type": "PUT", "key": "a_6", "val": 6}
+13:53:42 INFO udp_server Server_4004120530 coor: 8 len: 8 for key: a_6
+13:53:42 INFO udp_server Server_4004120530 Redirecting PUT request {"type": "PUT", "key": "a_6", "val": 6} to Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:42 INFO listen#40068 Server_172063064 Recieved PUT request {"type": "PUT", "key": "a_6", "val": 6}
+13:53:42 INFO listen#40068 Server_172063064 coor: 8 len: 8 for key: a_6
+13:53:42 INFO listen#40068 Server_172063064 coor: 8 len: 8 for key: a_6
+13:53:42 INFO listen#40068 Server_172063064 Correct Coordinator for request: {"type": "PUT", "key": "a_6", "val": 6} : Preference list [ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:42 INFO listen#35090 Server_821320311 Recieved RPUT request {"type": "RPUT", "key": "a_6", "val": 6, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:42 INFO listen#49122 Server_4004120530 Recieved RPUT request {"type": "RPUT", "key": "a_6", "val": 6, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:42 INFO listen#49122 Server_4004120530 Memebership msg from Server_172063064 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:43 INFO listen#54558 Server_4013513533 Memebership msg from Seed_3 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:43 INFO listen#45294 Server_821320311 Memebership msg from Seed_0 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:53:43 INFO listen#47750 Server_821320311 Memebership msg from Seed_2 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:53:43 INFO listen#60200 Server_4004120530 Memebership msg from Server_4013513533 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:43 INFO listen#39772 Server_172063064 Memebership msg from Server_821320311 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:43 INFO udp_server Server_4004120530 Recieved PUT request {"type": "PUT", "key": "a_7", "val": 7}
+13:53:43 INFO udp_server Server_4004120530 coor: 8 len: 8 for key: a_7
+13:53:43 INFO udp_server Server_4004120530 Redirecting PUT request {"type": "PUT", "key": "a_7", "val": 7} to Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:43 INFO listen#40068 Server_172063064 Recieved PUT request {"type": "PUT", "key": "a_7", "val": 7}
+13:53:43 INFO listen#40068 Server_172063064 coor: 8 len: 8 for key: a_7
+13:53:43 INFO listen#40068 Server_172063064 coor: 8 len: 8 for key: a_7
+13:53:43 INFO listen#40068 Server_172063064 Correct Coordinator for request: {"type": "PUT", "key": "a_7", "val": 7} : Preference list [ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:43 INFO listen#35090 Server_821320311 Recieved RPUT request {"type": "RPUT", "key": "a_7", "val": 7, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:43 INFO listen#49122 Server_4004120530 Recieved RPUT request {"type": "RPUT", "key": "a_7", "val": 7, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:43 INFO listen#40068 Server_172063064 Memebership msg from Server_4004120530 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:44 INFO listen#60484 Server_4004120530 Memebership msg from Seed_0 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:44 INFO listen#47750 Server_821320311 Memebership msg from Seed_2 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:53:44 INFO listen#33022 Server_4004120530 Memebership msg from Server_821320311 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:44 INFO udp_server Server_821320311 Recieved PUT request {"type": "PUT", "key": "a_8", "val": 8}
+13:53:44 INFO udp_server Server_821320311 coor: 8 len: 8 for key: a_8
+13:53:44 INFO udp_server Server_821320311 Redirecting PUT request {"type": "PUT", "key": "a_8", "val": 8} to Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:44 INFO listen#39772 Server_172063064 Recieved PUT request {"type": "PUT", "key": "a_8", "val": 8}
+13:53:44 INFO listen#39772 Server_172063064 coor: 8 len: 8 for key: a_8
+13:53:44 INFO listen#39772 Server_172063064 coor: 8 len: 8 for key: a_8
+13:53:44 INFO listen#39772 Server_172063064 Correct Coordinator for request: {"type": "PUT", "key": "a_8", "val": 8} : Preference list [ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:44 INFO listen#35090 Server_821320311 Recieved RPUT request {"type": "RPUT", "key": "a_8", "val": 8, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:44 INFO listen#49122 Server_4004120530 Recieved RPUT request {"type": "RPUT", "key": "a_8", "val": 8, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:44 INFO listen#55750 Server_4013513533 Memebership msg from Server_172063064 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:45 INFO listen#55900 Server_172063064 Memebership msg from Seed_2 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:45 INFO listen#60200 Server_4004120530 Memebership msg from Server_4013513533 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:45 INFO udp_server Server_821320311 Recieved PUT request {"type": "PUT", "key": "a_9", "val": 9}
+13:53:45 INFO udp_server Server_821320311 coor: 8 len: 8 for key: a_9
+13:53:45 INFO udp_server Server_821320311 Redirecting PUT request {"type": "PUT", "key": "a_9", "val": 9} to Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:45 INFO listen#39772 Server_172063064 Recieved PUT request {"type": "PUT", "key": "a_9", "val": 9}
+13:53:45 INFO listen#39772 Server_172063064 coor: 8 len: 8 for key: a_9
+13:53:45 INFO listen#39772 Server_172063064 coor: 8 len: 8 for key: a_9
+13:53:45 INFO listen#39772 Server_172063064 Correct Coordinator for request: {"type": "PUT", "key": "a_9", "val": 9} : Preference list [ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:45 INFO listen#35090 Server_821320311 Recieved RPUT request {"type": "RPUT", "key": "a_9", "val": 9, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:45 INFO listen#49122 Server_4004120530 Recieved RPUT request {"type": "RPUT", "key": "a_9", "val": 9, "ver": "{\"Server_172063064\": \"1\", \"Server_821320311\": \"0\", \"Server_4004120530\": \"0\"}"}
+13:53:45 INFO listen#40602 Server_821320311 Memebership msg from Server_4004120530 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:53:45 INFO udp_server Server_821320311 Recieved GET request {"type": "GET", "key": "a_0"}
+13:53:45 INFO udp_server Server_821320311 coor: 8 len: 8 for key: a_0
+13:53:45 INFO udp_server Server_821320311 Redirecting GET request to Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:45 INFO listen#39772 Server_172063064 Recieved GET request {"type": "GET", "key": "a_0"}
+13:53:45 INFO listen#39772 Server_172063064 coor: 8 len: 8 for key: a_0
+13:53:45 INFO listen#39772 Server_172063064 coor: 8 len: 8 for key: a_0
+13:53:45 INFO listen#39772 Server_172063064 Correct Coordinator for request: {"type": "GET", "key": "a_0"} : Preference list [ServerInfo(name='Server_172063064', host='172.24.8.181', port=9006), ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:45 ERROR Thread-21 (send_message) Server_172063064 Failed to send message to Name=Server_172063064,Address=172.24.8.181:9006,: 'Server_172063064'
+13:53:45 INFO listen#35090 Server_821320311 Recieved RGET request {"type": "RGET", "key": "a_0"}
+13:53:45 INFO listen#49122 Server_4004120530 Recieved RGET request {"type": "RGET", "key": "a_0"}
+13:53:45 INFO listen#39772 Server_172063064 Replying get request {"type": "RGET", "key": "a_0"}: key: a_0, val: ('0',)
+13:53:45 INFO MainThread maintest b'{"status": "1", "key": "a_0", "val": ["0"]}'
+13:53:45 INFO udp_server Server_4013513533 Recieved GET request {"type": "GET", "key": "a_1"}
+13:53:45 INFO udp_server Server_4013513533 coor: 8 len: 8 for key: a_1
+13:53:45 INFO udp_server Server_4013513533 Redirecting GET request to Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:45 INFO listen#55636 Server_172063064 Recieved GET request {"type": "GET", "key": "a_1"}
+13:53:45 INFO listen#55636 Server_172063064 coor: 8 len: 8 for key: a_1
+13:53:45 INFO listen#55636 Server_172063064 coor: 8 len: 8 for key: a_1
+13:53:45 INFO listen#55636 Server_172063064 Correct Coordinator for request: {"type": "GET", "key": "a_1"} : Preference list [ServerInfo(name='Server_172063064', host='172.24.8.181', port=9006), ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:45 ERROR Thread-24 (send_message) Server_172063064 Failed to send message to Name=Server_172063064,Address=172.24.8.181:9006,: 'Server_172063064'
+13:53:45 INFO listen#35090 Server_821320311 Recieved RGET request {"type": "RGET", "key": "a_1"}
+13:53:45 INFO listen#49122 Server_4004120530 Recieved RGET request {"type": "RGET", "key": "a_1"}
+13:53:45 INFO listen#55636 Server_172063064 Replying get request {"type": "RGET", "key": "a_1"}: key: a_1, val: ('1',)
+13:53:45 INFO MainThread maintest b'{"status": "1", "key": "a_1", "val": ["1"]}'
+13:53:45 INFO udp_server Server_172063064 Recieved GET request {"type": "GET", "key": "a_2"}
+13:53:45 INFO udp_server Server_172063064 coor: 8 len: 8 for key: a_2
+13:53:45 INFO udp_server Server_172063064 coor: 8 len: 8 for key: a_2
+13:53:45 INFO udp_server Server_172063064 Correct Coordinator for request: {"type": "GET", "key": "a_2"} : Preference list [ServerInfo(name='Server_172063064', host='172.24.8.181', port=9006), ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:45 ERROR Thread-27 (send_message) Server_172063064 Failed to send message to Name=Server_172063064,Address=172.24.8.181:9006,: 'Server_172063064'
+13:53:45 INFO listen#35090 Server_821320311 Recieved RGET request {"type": "RGET", "key": "a_2"}
+13:53:45 INFO listen#49122 Server_4004120530 Recieved RGET request {"type": "RGET", "key": "a_2"}
+13:53:45 INFO udp_server Server_172063064 Replying get request {"type": "RGET", "key": "a_2"}: key: a_2, val: ('2',)
+13:53:45 INFO MainThread maintest b'{"status": "1", "key": "a_2", "val": ["2"]}'
+13:53:45 INFO udp_server Server_4013513533 Recieved GET request {"type": "GET", "key": "a_3"}
+13:53:45 INFO udp_server Server_4013513533 coor: 8 len: 8 for key: a_3
+13:53:45 INFO udp_server Server_4013513533 Redirecting GET request to Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:45 INFO listen#55636 Server_172063064 Recieved GET request {"type": "GET", "key": "a_3"}
+13:53:45 INFO listen#55636 Server_172063064 coor: 8 len: 8 for key: a_3
+13:53:45 INFO listen#55636 Server_172063064 coor: 8 len: 8 for key: a_3
+13:53:45 INFO listen#55636 Server_172063064 Correct Coordinator for request: {"type": "GET", "key": "a_3"} : Preference list [ServerInfo(name='Server_172063064', host='172.24.8.181', port=9006), ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:45 ERROR Thread-30 (send_message) Server_172063064 Failed to send message to Name=Server_172063064,Address=172.24.8.181:9006,: 'Server_172063064'
+13:53:45 INFO listen#35090 Server_821320311 Recieved RGET request {"type": "RGET", "key": "a_3"}
+13:53:45 INFO listen#49122 Server_4004120530 Recieved RGET request {"type": "RGET", "key": "a_3"}
+13:53:45 INFO listen#55636 Server_172063064 Replying get request {"type": "RGET", "key": "a_3"}: key: a_3, val: ('3',)
+13:53:45 INFO MainThread maintest b'{"status": "1", "key": "a_3", "val": ["3"]}'
+13:53:45 INFO udp_server Server_4013513533 Recieved GET request {"type": "GET", "key": "a_4"}
+13:53:45 INFO udp_server Server_4013513533 coor: 8 len: 8 for key: a_4
+13:53:45 INFO udp_server Server_4013513533 Redirecting GET request to Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:45 INFO listen#55636 Server_172063064 Recieved GET request {"type": "GET", "key": "a_4"}
+13:53:45 INFO listen#55636 Server_172063064 coor: 8 len: 8 for key: a_4
+13:53:45 INFO listen#55636 Server_172063064 coor: 8 len: 8 for key: a_4
+13:53:45 INFO listen#55636 Server_172063064 Correct Coordinator for request: {"type": "GET", "key": "a_4"} : Preference list [ServerInfo(name='Server_172063064', host='172.24.8.181', port=9006), ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:45 ERROR Thread-33 (send_message) Server_172063064 Failed to send message to Name=Server_172063064,Address=172.24.8.181:9006,: 'Server_172063064'
+13:53:45 INFO listen#35090 Server_821320311 Recieved RGET request {"type": "RGET", "key": "a_4"}
+13:53:45 INFO listen#49122 Server_4004120530 Recieved RGET request {"type": "RGET", "key": "a_4"}
+13:53:45 INFO listen#55636 Server_172063064 Replying get request {"type": "RGET", "key": "a_4"}: key: a_4, val: ('4',)
+13:53:45 INFO MainThread maintest b'{"status": "1", "key": "a_4", "val": ["4"]}'
+13:53:45 INFO udp_server Server_172063064 Recieved GET request {"type": "GET", "key": "a_5"}
+13:53:45 INFO udp_server Server_172063064 coor: 8 len: 8 for key: a_5
+13:53:45 INFO udp_server Server_172063064 coor: 8 len: 8 for key: a_5
+13:53:45 INFO udp_server Server_172063064 Correct Coordinator for request: {"type": "GET", "key": "a_5"} : Preference list [ServerInfo(name='Server_172063064', host='172.24.8.181', port=9006), ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:45 ERROR Thread-36 (send_message) Server_172063064 Failed to send message to Name=Server_172063064,Address=172.24.8.181:9006,: 'Server_172063064'
+13:53:45 INFO listen#35090 Server_821320311 Recieved RGET request {"type": "RGET", "key": "a_5"}
+13:53:45 INFO listen#49122 Server_4004120530 Recieved RGET request {"type": "RGET", "key": "a_5"}
+13:53:45 INFO udp_server Server_172063064 Replying get request {"type": "RGET", "key": "a_5"}: key: a_5, val: ('5',)
+13:53:45 INFO MainThread maintest b'{"status": "1", "key": "a_5", "val": ["5"]}'
+13:53:45 INFO udp_server Server_4013513533 Recieved GET request {"type": "GET", "key": "a_6"}
+13:53:45 INFO udp_server Server_4013513533 coor: 8 len: 8 for key: a_6
+13:53:45 INFO udp_server Server_4013513533 Redirecting GET request to Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:45 INFO listen#55636 Server_172063064 Recieved GET request {"type": "GET", "key": "a_6"}
+13:53:45 INFO listen#55636 Server_172063064 coor: 8 len: 8 for key: a_6
+13:53:45 INFO listen#55636 Server_172063064 coor: 8 len: 8 for key: a_6
+13:53:45 INFO listen#55636 Server_172063064 Correct Coordinator for request: {"type": "GET", "key": "a_6"} : Preference list [ServerInfo(name='Server_172063064', host='172.24.8.181', port=9006), ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:45 ERROR Thread-39 (send_message) Server_172063064 Failed to send message to Name=Server_172063064,Address=172.24.8.181:9006,: 'Server_172063064'
+13:53:45 INFO listen#35090 Server_821320311 Recieved RGET request {"type": "RGET", "key": "a_6"}
+13:53:45 INFO listen#49122 Server_4004120530 Recieved RGET request {"type": "RGET", "key": "a_6"}
+13:53:45 INFO listen#55636 Server_172063064 Replying get request {"type": "RGET", "key": "a_6"}: key: a_6, val: ('6',)
+13:53:45 INFO MainThread maintest b'{"status": "1", "key": "a_6", "val": ["6"]}'
+13:53:45 INFO udp_server Server_821320311 Recieved GET request {"type": "GET", "key": "a_7"}
+13:53:45 INFO udp_server Server_821320311 coor: 8 len: 8 for key: a_7
+13:53:45 INFO udp_server Server_821320311 Redirecting GET request to Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:45 INFO listen#39772 Server_172063064 Recieved GET request {"type": "GET", "key": "a_7"}
+13:53:45 INFO listen#39772 Server_172063064 coor: 8 len: 8 for key: a_7
+13:53:45 INFO listen#39772 Server_172063064 coor: 8 len: 8 for key: a_7
+13:53:45 INFO listen#39772 Server_172063064 Correct Coordinator for request: {"type": "GET", "key": "a_7"} : Preference list [ServerInfo(name='Server_172063064', host='172.24.8.181', port=9006), ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:45 ERROR Thread-42 (send_message) Server_172063064 Failed to send message to Name=Server_172063064,Address=172.24.8.181:9006,: 'Server_172063064'
+13:53:45 INFO listen#35090 Server_821320311 Recieved RGET request {"type": "RGET", "key": "a_7"}
+13:53:45 INFO listen#49122 Server_4004120530 Recieved RGET request {"type": "RGET", "key": "a_7"}
+13:53:45 INFO listen#39772 Server_172063064 Replying get request {"type": "RGET", "key": "a_7"}: key: a_7, val: ('7',)
+13:53:45 INFO MainThread maintest b'{"status": "1", "key": "a_7", "val": ["7"]}'
+13:53:45 INFO udp_server Server_4004120530 Recieved GET request {"type": "GET", "key": "a_8"}
+13:53:45 INFO udp_server Server_4004120530 coor: 8 len: 8 for key: a_8
+13:53:45 INFO udp_server Server_4004120530 Redirecting GET request to Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:45 INFO listen#40068 Server_172063064 Recieved GET request {"type": "GET", "key": "a_8"}
+13:53:45 INFO listen#40068 Server_172063064 coor: 8 len: 8 for key: a_8
+13:53:45 INFO listen#40068 Server_172063064 coor: 8 len: 8 for key: a_8
+13:53:45 INFO listen#40068 Server_172063064 Correct Coordinator for request: {"type": "GET", "key": "a_8"} : Preference list [ServerInfo(name='Server_172063064', host='172.24.8.181', port=9006), ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:45 ERROR Thread-45 (send_message) Server_172063064 Failed to send message to Name=Server_172063064,Address=172.24.8.181:9006,: 'Server_172063064'
+13:53:45 INFO listen#35090 Server_821320311 Recieved RGET request {"type": "RGET", "key": "a_8"}
+13:53:45 INFO listen#49122 Server_4004120530 Recieved RGET request {"type": "RGET", "key": "a_8"}
+13:53:45 INFO listen#40068 Server_172063064 Replying get request {"type": "RGET", "key": "a_8"}: key: a_8, val: ('8',)
+13:53:45 INFO MainThread maintest b'{"status": "1", "key": "a_8", "val": ["8"]}'
+13:53:45 INFO udp_server Server_821320311 Recieved GET request {"type": "GET", "key": "a_9"}
+13:53:45 INFO udp_server Server_821320311 coor: 8 len: 8 for key: a_9
+13:53:45 INFO udp_server Server_821320311 Redirecting GET request to Name=Server_172063064,Address=172.24.8.181:9006,
+13:53:45 INFO listen#39772 Server_172063064 Recieved GET request {"type": "GET", "key": "a_9"}
+13:53:45 INFO listen#39772 Server_172063064 coor: 8 len: 8 for key: a_9
+13:53:45 INFO listen#39772 Server_172063064 coor: 8 len: 8 for key: a_9
+13:53:45 INFO listen#39772 Server_172063064 Correct Coordinator for request: {"type": "GET", "key": "a_9"} : Preference list [ServerInfo(name='Server_172063064', host='172.24.8.181', port=9006), ServerInfo(name='Server_821320311', host='172.24.8.181', port=9004), ServerInfo(name='Server_4004120530', host='172.24.8.181', port=9007)]
+13:53:45 ERROR Thread-48 (send_message) Server_172063064 Failed to send message to Name=Server_172063064,Address=172.24.8.181:9006,: 'Server_172063064'
+13:53:45 INFO listen#35090 Server_821320311 Recieved RGET request {"type": "RGET", "key": "a_9"}
+13:53:45 INFO listen#49122 Server_4004120530 Recieved RGET request {"type": "RGET", "key": "a_9"}
+13:53:45 INFO listen#39772 Server_172063064 Replying get request {"type": "RGET", "key": "a_9"}: key: a_9, val: ('9',)
+13:53:45 INFO MainThread maintest b'{"status": "1", "key": "a_9", "val": ["9"]}'
+13:53:46 INFO listen#54558 Server_4013513533 Memebership msg from Seed_3 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:46 INFO listen#49360 Server_172063064 Memebership msg from Seed_0 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:46 INFO listen#39772 Server_172063064 Memebership msg from Server_821320311 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:47 INFO listen#45294 Server_821320311 Memebership msg from Seed_0 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:53:47 INFO listen#44714 Server_172063064 Memebership msg from Seed_3 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:47 INFO listen#53986 Server_4013513533 Memebership msg from Seed_2 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:47 INFO listen#39772 Server_172063064 Memebership msg from Server_821320311 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:48 INFO listen#59274 Server_4013513533 Memebership msg from Seed_1 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:49 INFO listen#49122 Server_4004120530 Memebership msg from Server_172063064 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:50 INFO listen#60484 Server_4004120530 Memebership msg from Seed_0 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:50 INFO listen#54558 Server_4013513533 Memebership msg from Seed_3 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:50 INFO listen#33022 Server_4004120530 Memebership msg from Server_821320311 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:51 INFO listen#53986 Server_4013513533 Memebership msg from Seed_2 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:51 INFO listen#54860 Server_4013513533 Memebership msg from Server_4004120530 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:52 INFO listen#33022 Server_4004120530 Memebership msg from Server_821320311 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:52 INFO listen#35090 Server_821320311 Memebership msg from Server_172063064 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:53:52 INFO listen#40602 Server_821320311 Memebership msg from Server_4004120530 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:53:53 INFO listen#49078 Server_172063064 Memebership msg from Seed_1 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:54 INFO listen#54290 Server_4013513533 Memebership msg from Server_821320311 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:54 INFO listen#49122 Server_4004120530 Memebership msg from Server_172063064 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:55 INFO listen#60484 Server_4004120530 Memebership msg from Seed_0 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:55 INFO listen#53986 Server_4013513533 Memebership msg from Seed_2 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:55 INFO listen#40602 Server_821320311 Memebership msg from Server_4004120530 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:53:56 INFO listen#34784 Server_821320311 Memebership msg from Seed_1 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:53:56 INFO listen#39772 Server_172063064 Memebership msg from Server_821320311 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:57 INFO listen#54860 Server_4013513533 Memebership msg from Server_4004120530 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:58 INFO listen#60484 Server_4004120530 Memebership msg from Seed_0 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:58 INFO listen#59274 Server_4013513533 Memebership msg from Seed_1 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:58 INFO listen#33322 Server_4004120530 Memebership msg from Seed_2 to Server_4004120530: 172063064_821320311_4004120530_4013513533_
+13:53:58 INFO listen#55750 Server_4013513533 Memebership msg from Server_172063064 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
+13:53:59 INFO listen#55636 Server_172063064 Memebership msg from Server_4013513533 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:53:59 INFO listen#49078 Server_172063064 Memebership msg from Seed_1 to Server_172063064: 172063064_821320311_4004120530_4013513533_
+13:54:00 INFO listen#34784 Server_821320311 Memebership msg from Seed_1 to Server_821320311: 172063064_821320311_4004120530_4013513533_
+13:54:00 INFO listen#54860 Server_4013513533 Memebership msg from Server_4004120530 to Server_4013513533: 172063064_821320311_4004120530_4013513533_
