@@ -246,7 +246,11 @@ class Server(Process):
         try:
             query = f"""
                 INSERT INTO {self._info.name} (key, val, ver)
-                VALUES (%s, %s, %s);
+                VALUES (%s, %s, %s)
+                ON CONFLICT (key)
+                DO UPDATE SET
+                    val = EXCLUDED.val,
+                    ver = EXCLUDED.ver;
             """
             # Use parameterized queries to safely pass values
             self.db_cursor.execute(query, (key, val, ver))
@@ -260,7 +264,7 @@ class Server(Process):
         verQuery = f"SELECT ver FROM {self._info.name} WHERE key = %s"
         self.db_cursor.execute(verQuery, (key,))
         if self.db_cursor.rowcount > 0:
-            return self.db_cursor.fetchone()
+            return self.db_cursor.fetchone()[0]  # Extract the first element of the tuple
         return None
     
     def get_val(self, key):
@@ -276,11 +280,59 @@ class Server(Process):
         ver = json.dumps(ver)
         return ver
     
+    def get_all_keys(self):
+        query = f"SELECT key FROM {self._info.name};"
+        self.db_cursor.execute(query)
+        if self.db_cursor.rowcount > 0:   
+            return [row[0] for row in self.db_cursor.fetchall()]
+        return []
+
+    def if_trans(self, key: str):
+        pref = self.ring.find_preference(key)
+        last = pref[self.config["N"]-1]
+        return self.ring.equal(last, self._info)
+
+    def delete_row(self, key: str):
+        with self.lock:  # Ensure thread-safety for database operations
+            delete_query = f"DELETE FROM {self._info.name} WHERE key = %s;"
+            self.db_cursor.execute(delete_query, (key,))
+            self.db_connection.commit()
+
+
+    def transfer_keys_to_new_server(self, new_server: ServerInfo):
+        _logger = server_logger.bind(server_name=self._info.name)
+        _logger.info(f"Transferring keys to new server: {new_server}")
+
+        # Find keys that the new server is responsible for
+        keys_to_transfer = []
+        for key in self.get_all_keys():  # Implement a method to get all keys in this server
+            if self.if_trans(key):
+                keys_to_transfer.append(key)
+
+        # Send keys and values to the new server
+        for key in keys_to_transfer:
+            val = self.get_val(key)
+            ver = self.get_version(key)
+            msg = JsonMessage({"type": "RPUT", "key": key, "val": val, "ver": ver})
+            while True:
+                try:
+                    sock = self._connection_stub.get_connection(new_server.name)
+                    response = sock.send(msg)
+                    if response and response.get("status") == "1":
+                        _logger.info(f"Successfully transferred key {key} to {new_server}")
+                        self.delete_row(key)
+                        break
+                    else:
+                        _logger.error(f"Failed to transfer key {key} to {new_server}")
+                except Exception as e:
+                    _logger.error(f"Error transferring key {key} to {new_server}: {e}")
+
+
     def _process_req(self, msg: JsonMessage) -> Optional[JsonMessage]:
         _logger = server_logger.bind(server_name=self._info.name)
 
         if msg.get("type") == "PING":
-            # _logger.info(f'Ping from on [{msg.get("name")}:{msg.get("port")}]')
+            _logger.info(f'Ping from on [{msg.get("name")}:{msg.get("port")}]')
             name = msg.get("name")
             port = int(msg.get("port"))
             meminfo = ServerInfo(name, self.config["host"], port)
@@ -300,10 +352,11 @@ class Server(Process):
             return JsonMessage({"status": 1})
 
         elif msg.get("type") == "MEMBERSHIP":
-            # _logger.info(
-            #     f'Memebership msg from {msg.get("from")} to {self._info.name}: {msg.get("Names")}'
-            # )
+            _logger.info(
+                f'Memebership msg from {msg.get("from")} to {self._info.name}: {msg.get("Names")}'
+            )
             servers = self.ring.decode(msg)
+            new_servers = []
             with self.lock:
                 for meminfo in servers:
                     exist = False
@@ -313,13 +366,17 @@ class Server(Process):
                             exist = True
                     if not exist:
                         self.ring.servers.add(meminfo)
+                        new_servers.append(meminfo)
                         self.ring.numserver += 1
                         try:
                             self._connection_stub.addServer(meminfo)
                         except Exception as e:
                             _logger.info(f"Error in addServer: {e}")
-            # _logger.info(self.ring.servers)
-            _logger.info(self.ring.numserver)
+                # _logger.info(self.ring.servers)
+                # _logger.info(self.ring.numserver)
+                # Initiate key transfer to new servers
+                for new_server in new_servers:
+                    self.transfer_keys_to_new_server(new_server)
 
             return JsonMessage({"status": 1})
         
@@ -335,6 +392,8 @@ class Server(Process):
                 sock = self._connection_stub.get_connection(coordinator.name)
                 return sock.send(msg)
             pref = self.ring.find_preference(key)
+            pref.remove(self.ring.info)
+
             _logger.info(f"Correct Coordinator for request: {msg} : Preference list {pref}")
 
             ver = self.get_version(key)
@@ -352,7 +411,7 @@ class Server(Process):
             for resp in responses.values():
                 if resp["status"]=="1":
                     succ+=1
-            
+            # _logger.info(f"succ len: {succ}")
             if (succ>=self.config["W"]) and self.put(key, val, ver):
                 return JsonMessage({"status": "1"})
             else:

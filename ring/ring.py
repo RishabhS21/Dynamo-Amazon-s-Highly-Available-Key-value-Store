@@ -93,11 +93,11 @@ class Ring:
         """Find the preference list based on the key"""
         logger = server_logger.bind(server_name=self.info.name)
 
-        coor_i = (self.find_coordinator(key)+1)%self.numserver
+        coor_i = (self.find_coordinator(key))%self.numserver
         perf = []
-        for i in range(self.config["N"]-1):
+        for i in range(self.config["N"]):
             j = (i+coor_i)%self.numserver
             if j<4: j+=4
-            logger.info(f"[j: {j}, len: {len(self.servers)}]")
+            # logger.info(f"[j: {j}, len: {len(self.servers)}]")
             perf.append(self.servers[j])
         return perf

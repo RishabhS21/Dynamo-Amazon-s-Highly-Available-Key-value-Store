@@ -90,6 +90,7 @@ def test():
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     for p in put:
         while True:
+            sleep(1)
             msg = {"type": "PUT", "key": p, "val": put[p]}
             sermsg = json.dumps(msg).encode("utf-8")
             to = random.choice([i for i in range(config["NUMSER"])])
@@ -100,9 +101,9 @@ def test():
             response = JsonMessage(response)
             if response["status"]=="1":
                 break
+            
 
     for g in get:
-
         msg = {"type":"GET", "key":g}
         sermsg = json.dumps(msg).encode("utf-8")
         to = random.choice([i for i in range(config["NUMSER"])])
@@ -115,3 +116,4 @@ if __name__ == "__main__":
     init_seeds()
     init_servers()
     print(test())
+
