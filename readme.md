@@ -93,5 +93,5 @@ DB_PASSWORD = "mypassword"
 Execute the script to verify functionality:
 
 ```bash
-python3 test.py
+./run.sh
 ```
