@@ -70,6 +70,15 @@ class Server(Process):
                 """
                 self.db_cursor.execute(create_database_query)
                 _logger.info(f"Created database {self.db}")
+                create_table_query = f"""
+                    CREATE TABLE {self._info.name} (
+                        key VARCHAR(255) PRIMARY KEY,
+                        val TEXT,
+                        ver TEXT
+                    );
+                """
+                self.db_cursor.execute(create_table_query)
+                _logger.info(f"Created table {self._info.name}")
                 return
             except Exception as e:
                 _logger.info(f"Error connecting to database: {e}")
@@ -113,7 +122,7 @@ class Server(Process):
 
     def membership(self):
         _logger = server_logger.bind(server_name=self._info.name)
-        sleep(2)
+        sleep(1)
         while True:
             try:
                 sleep(random.choice([1, 2, 3]))
@@ -122,8 +131,6 @@ class Server(Process):
                     to = random.choice(list(self._connection_stub._connections.keys()))
                 sock = self._connection_stub.get_connection(to)
                 reply = sock.send(msg)
-                # _logger.info(f"Membership update sent to {to}")
-                # _logger.info(f"Membership update response from {to}: {reply}")
 
             except Exception as e:
                 _logger.info(f"Error in membership broadcast: {e}")
@@ -218,7 +225,7 @@ class Server(Process):
                 if response is not None:
                     _logger.debug(f"Received response from {server}: {response}")
                     with response_lock:
-                        results[server.name] = {"status": "success", "response": response}
+                        results[server.name] = response
             except Exception as e:
                 _logger.error(f"Failed to send message to {server}: {e}")
 
@@ -233,7 +240,42 @@ class Server(Process):
             thread.join()
 
         return results
+    
+    def put(self, key, val, ver):
+        _logger = server_logger.bind(server_name=self._info.name)
+        try:
+            query = f"""
+                INSERT INTO {self._info.name} (key, val, ver)
+                VALUES (%s, %s, %s);
+            """
+            # Use parameterized queries to safely pass values
+            self.db_cursor.execute(query, (key, val, ver))
+            return True  # Success
+        except Exception as e:
+            # Log the exception for debugging
+            _logger.info(f"Error inserting into database: {e}")
+            return False  # Failure
+        
+    def get_version(self, key):
+        verQuery = f"SELECT ver FROM {self._info.name} WHERE key = %s"
+        self.db_cursor.execute(verQuery, (key,))
+        if self.db_cursor.rowcount > 0:
+            return self.db_cursor.fetchone()
+        return None
+    
+    def get_val(self, key):
+        verQuery = f"SELECT val FROM {self._info.name} WHERE key = %s"
+        self.db_cursor.execute(verQuery, (key,))
+        if self.db_cursor.rowcount > 0:
+            return self.db_cursor.fetchone()
+        return None
 
+    def increment_version(self, ver):
+        ver = json.loads(ver)
+        ver[self._info.name] = str(int(ver[self._info.name])+1)
+        ver = json.dumps(ver)
+        return ver
+    
     def _process_req(self, msg: JsonMessage) -> Optional[JsonMessage]:
         _logger = server_logger.bind(server_name=self._info.name)
 
@@ -257,7 +299,6 @@ class Server(Process):
             # _logger.info(self.ring.numserver)
             return JsonMessage({"status": 1})
 
-
         elif msg.get("type") == "MEMBERSHIP":
             # _logger.info(
             #     f'Memebership msg from {msg.get("from")} to {self._info.name}: {msg.get("Names")}'
@@ -278,7 +319,7 @@ class Server(Process):
                         except Exception as e:
                             _logger.info(f"Error in addServer: {e}")
             # _logger.info(self.ring.servers)
-            # _logger.info(self.ring.numserver)
+            _logger.info(self.ring.numserver)
 
             return JsonMessage({"status": 1})
         
@@ -287,22 +328,83 @@ class Server(Process):
             key = msg.get("key")
             val = msg.get("val")
             coordinator = self.ring.servers[self.ring.find_coordinator(key)]
-            if not self.ring.equal(self._info,coordinator):
+            if not self.ring.equal(self._info, coordinator):
                 _logger.info(
-                    f"Redirecting PUT request to {coordinator}"
+                    f"Redirecting PUT request {msg} to {coordinator}"
                 )
                 sock = self._connection_stub.get_connection(coordinator.name)
                 return sock.send(msg)
             pref = self.ring.find_preference(key)
             _logger.info(f"Correct Coordinator for request: {msg} : Preference list {pref}")
+
+            ver = self.get_version(key)
+
+            if ver is None:
+                ver = {self._info.name: "0"}
+                for p in pref:
+                    ver[p.name] = "0"
+                ver = json.dumps(ver)
+            ver = self.increment_version(ver)
             msg["type"]="RPUT"
+            msg["ver"]=ver
             responses = self.forwardPref(msg, pref)
-            _logger.info(f"Responses from preference servers: {responses}")
-            return JsonMessage({"status": "success"})
+            succ = 0
+            for resp in responses.values():
+                if resp["status"]=="1":
+                    succ+=1
+            
+            if (succ>=self.config["W"]) and self.put(key, val, ver):
+                return JsonMessage({"status": "1"})
+            else:
+                return JsonMessage({"status": "0"})
 
         elif msg.get("type") == "RPUT":
             _logger.info(f"Recieved RPUT request {msg}")
-            return JsonMessage({"status": "success"})
+            key = msg.get("key")
+            val = msg.get("val")
+            ver = msg.get("ver")
+            
+            if self.put(key, val, ver):
+                return JsonMessage({"status": "1"})
+            else:
+                return JsonMessage({"status": "0"})
+            
+        elif msg.get("type") == "GET":
+            _logger.info(f"Recieved GET request {msg}")
+            key = msg.get("key")
+            coordinator = self.ring.servers[self.ring.find_coordinator(key)]
+            if not self.ring.equal(self._info, coordinator):
+                _logger.info(
+                    f"Redirecting GET request to {coordinator}"
+                )
+                sock = self._connection_stub.get_connection(coordinator.name)
+                return sock.send(msg)
+            pref = self.ring.find_preference(key)
+            _logger.info(f"Correct Coordinator for request: {msg} : Preference list {pref}")
+            msg["type"]="RGET"
+            responses = self.forwardPref(msg, pref)
+            succ = 0
+            for resp in responses.values():
+                if resp["status"]=="1":
+                    succ+=1
+            
+            if (succ>=self.config["R"]):
+                val = self.get_val(key)
+                if val is not None:
+                    _logger.info(f"Replying get request {msg}: key: {key}, val: {val}")
+                    return JsonMessage({"status":"1", "key": key, "val": val})
+                else:
+                    return JsonMessage({"status": "0"})
+            
+        elif msg.get("type") == "RGET":
+            _logger.info(f"Recieved RGET request {msg}")
+            key = msg.get("key")
+            val = self.get_val(key)
+            if val is not None:
+                return JsonMessage({"status":"1", "key": key, "val": val})
+            else:
+                return JsonMessage({"status": "0"})
+
 
     def __str__(self) -> str:
         return str(self._info)

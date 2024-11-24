@@ -6,5 +6,7 @@
     "N": 3,
     "host": "172.24.8.181" ,
     "SEEDPORT": 9000,
-    "SERVERPORT": 9004
+    "SERVERPORT": 9004,
+    "R": 2,
+    "W": 2
 }

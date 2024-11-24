@@ -70,36 +70,34 @@ class Ring:
         """Generate a 40-bit hash value using SHA-1"""
         # SHA-1 generates a 20-byte hash
         sha1_hash = hashlib.sha1(input_string.encode()).digest()
-        
         # Combine the first 5 bytes into an integer (40 bits)
         hash_value = 0
         for i in range(5):
             hash_value = (hash_value << 8) | sha1_hash[i]
-        
         return hash_value
 
 
     def find_coordinator(self, key):
         """Find the coordinator based on the key"""
+        logger = server_logger.bind(server_name=self.info.name)
+
         hashkey = self.SH1hash(key)
         # Find the first position greater than or equal to the hashkey
         coor_i = self.servers.bisect_left(ServerInfo("Server_"+str(hashkey), self.config["host"], 1000))
+        logger.info(f"coor: {coor_i} len: {len(self.servers)} for key: {key}")
         if (coor_i<len(self.servers)): return coor_i
-        return 4
+        return self.config["NUMSEED"]
                                         
 
     def find_preference(self, key):
         """Find the preference list based on the key"""
+        logger = server_logger.bind(server_name=self.info.name)
+
         coor_i = (self.find_coordinator(key)+1)%self.numserver
         perf = []
         for i in range(self.config["N"]-1):
             j = (i+coor_i)%self.numserver
             if j<4: j+=4
+            logger.info(f"[j: {j}, len: {len(self.servers)}]")
             perf.append(self.servers[j])
         return perf
-
-
-
-
-    
-    

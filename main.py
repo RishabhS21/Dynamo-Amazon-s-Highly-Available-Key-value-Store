@@ -11,7 +11,7 @@ from core.logger import server_logger
 from core.message import JsonMessage
 from time import sleep
 
-sock_pool_size = 8
+sock_pool_size = 32
 
 
 def load_config(filename="core/config.json"):
@@ -81,18 +81,35 @@ def init_servers():
 
 
 def test():
-    sleep(10)
+    _logger = server_logger.bind(server_name="maintest")
+
+    sleep(20)
     put = {f"a_{i}": i for i in range(10)}
-    get = {f"a_{i}" for i in range(10)}
+    get = [f"a_{i}" for i in range(10)]
 
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     for p in put:
-        msg = {"type": "PUT", "key": p, "val": put[p]}
+        while True:
+            msg = {"type": "PUT", "key": p, "val": put[p]}
+            sermsg = json.dumps(msg).encode("utf-8")
+            to = random.choice([i for i in range(config["NUMSER"])])
+            addr = (config["host"], config["SERVERPORT"] + to)
+            client_socket.sendto(sermsg, addr)
+            response, server = client_socket.recvfrom(1024)
+            response = json.loads(response.decode("utf-8"))
+            response = JsonMessage(response)
+            if response["status"]=="1":
+                break
+
+    for g in get:
+
+        msg = {"type":"GET", "key":g}
         sermsg = json.dumps(msg).encode("utf-8")
         to = random.choice([i for i in range(config["NUMSER"])])
         addr = (config["host"], config["SERVERPORT"] + to)
         client_socket.sendto(sermsg, addr)
-
+        response, server = client_socket.recvfrom(1024)
+        _logger.info(response)
 
 if __name__ == "__main__":
     init_seeds()
