@@ -13,6 +13,8 @@ Ensure the following are installed:
 
 ---
 
+Also, you need to ensure that you have a server.log file inside logs/ directory.
+
 ## **Step 1: Install PostgreSQL**
 
 ### **For Ubuntu/Linux**
