@@ -1,4 +1,7 @@
-# **Setup Instructions**
+# **Dynamo: Amazon’s Highly Available Key-value Store**
+This repository provides a half-baked implementation of Dynamo which is a highly available key-value store designed by Amazon. This is the [video](https://drive.google.com/file/d/1xXaojWpkTJX2s4Af6lSjnuRCSzr79apB/view?usp=drive_link) explaining this implememntation in detail.
+
+## **Setup Instructions**
 
 Follow these steps to set up the project and run the code on your local machine.
 
